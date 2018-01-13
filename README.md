@@ -1,2 +1,2 @@
-# untitled-entitas-project
-Educational project for learning Entitas
+# Goblin Commander
+A game where you command bunch of goblins in order to protect their sacred Citadel from the attack of some stray heroes.

@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8D2B65A5-6D75-2F29-6A17-343DEA922079}</ProjectGuid>
+    <ProjectGuid>{632375A9-41D6-7F94-66D1-680A2F922184}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -76,17 +76,11 @@
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
     </Reference>
-    <Reference Include="Entitas.CodeGeneration.Attributes">
-      <HintPath>Assets\Libraries\Entitas\Entitas.CodeGeneration.Attributes.dll</HintPath>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
-    <Reference Include="DesperateDevs.Utils">
-      <HintPath>Assets\Libraries\Entitas\DesperateDevs.Utils.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas">
-      <HintPath>Assets\Libraries\Entitas\Entitas.dll</HintPath>
-    </Reference>
-    <Reference Include="Entitas.Unity">
-      <HintPath>Assets\Libraries\Entitas\Entitas.Unity.dll</HintPath>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
     <Reference Include="DesperateDevs.Logging">
       <HintPath>Assets\Libraries\Entitas\DesperateDevs.Logging.dll</HintPath>
@@ -94,11 +88,23 @@
     <Reference Include="DesperateDevs.Networking">
       <HintPath>Assets\Libraries\Entitas\DesperateDevs.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="Entitas.VisualDebugging.Unity">
-      <HintPath>Assets\Libraries\Entitas\Entitas.VisualDebugging.Unity.dll</HintPath>
-    </Reference>
     <Reference Include="DesperateDevs.Serialization">
       <HintPath>Assets\Libraries\Entitas\DesperateDevs.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="DesperateDevs.Utils">
+      <HintPath>Assets\Libraries\Entitas\DesperateDevs.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.CodeGeneration.Attributes">
+      <HintPath>Assets\Libraries\Entitas\Entitas.CodeGeneration.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas">
+      <HintPath>Assets\Libraries\Entitas\Entitas.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.Unity">
+      <HintPath>Assets\Libraries\Entitas\Entitas.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Entitas.VisualDebugging.Unity">
+      <HintPath>Assets\Libraries\Entitas\Entitas.VisualDebugging.Unity.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
