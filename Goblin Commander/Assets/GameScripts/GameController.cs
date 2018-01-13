@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour {
     private Systems CreateFeatures(Contexts contexts)
     {
         return new Feature("Systems")
-            .Add(new GeneratorFeature(contexts));
+            .Add(new GeneratorFeature(contexts))
+            .Add(new ViewFeature(contexts));
     }
 }

@@ -6,6 +6,7 @@ public enum CharacterType
 }
 
 [Game]
-public class CharacterComponent : IComponent {
+public class CharacterComponent : IComponent
+{
 	public CharacterType Type;
 }

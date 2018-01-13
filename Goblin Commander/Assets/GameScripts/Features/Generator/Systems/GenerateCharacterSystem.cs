@@ -1,4 +1,5 @@
-﻿using Entitas;
+﻿using UnityEngine;
+using Entitas;
 
 public class GenerateCharacterSystem : IInitializeSystem
 {
@@ -16,6 +17,8 @@ public class GenerateCharacterSystem : IInitializeSystem
     private void CreateTestCharacter()
     {
         GameEntity testCharacter = context.CreateEntity();
+        testCharacter.AddGameObjectRequest("Goblin");
         testCharacter.AddCharacter(CharacterType.goblin);
+        testCharacter.AddPosition(Vector3.zero);
     }
 }
