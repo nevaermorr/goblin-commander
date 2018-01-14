@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using Entitas;
 
-[Game]
+[Game, Input]
 public class PositionComponent : IComponent
 {
-	public Vector3 Value;
+	public Vector2 Value;
 }
