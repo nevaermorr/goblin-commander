@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour
         return new Feature("Systems")
             .Add(new GeneratorFeature(contexts))
             .Add(new InputFeature(contexts))
-            .Add(new BeaconFeature(contexts))
+            .Add(new ControlFeature(contexts))
             .Add(new ViewFeature(contexts))
             .Add(new DestructorFeature(contexts));
     }
