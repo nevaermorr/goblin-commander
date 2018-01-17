@@ -5,7 +5,8 @@ public class GenerateCharacterSystem : IInitializeSystem
 {
     private readonly GameContext context;
 
-    public GenerateCharacterSystem(Contexts contexts){
+    public GenerateCharacterSystem(Contexts contexts)
+    {
         context = contexts.game;
     }
 
