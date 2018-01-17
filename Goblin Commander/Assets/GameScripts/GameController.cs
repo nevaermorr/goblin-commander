@@ -28,6 +28,7 @@ public class GameController : MonoBehaviour
             .Add(new GeneratorFeature(contexts))
             .Add(new InputFeature(contexts))
             .Add(new BeaconFeature(contexts))
-            .Add(new ViewFeature(contexts));
+            .Add(new ViewFeature(contexts))
+            .Add(new DestructorFeature(contexts));
     }
 }

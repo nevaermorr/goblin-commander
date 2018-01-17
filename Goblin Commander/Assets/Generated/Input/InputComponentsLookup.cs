@@ -13,15 +13,17 @@ public static class InputComponentsLookup {
     public const int MousePressed = 2;
     public const int MouseReleased = 3;
     public const int Position = 4;
+    public const int ToDestroy = 5;
 
-    public const int TotalComponents = 5;
+    public const int TotalComponents = 6;
 
     public static readonly string[] componentNames = {
         "MouseDown",
         "MouseLeft",
         "MousePressed",
         "MouseReleased",
-        "Position"
+        "Position",
+        "ToDestroy"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -29,6 +31,7 @@ public static class InputComponentsLookup {
         typeof(MouseLeftComponent),
         typeof(MousePressedComponent),
         typeof(MouseReleasedComponent),
-        typeof(PositionComponent)
+        typeof(PositionComponent),
+        typeof(ToDestroyComponent)
     };
 }

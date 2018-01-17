@@ -14,8 +14,9 @@ public static class GameComponentsLookup {
     public const int GameObjectRequest = 3;
     public const int Position = 4;
     public const int Sprite = 5;
+    public const int ToDestroy = 6;
 
-    public const int TotalComponents = 6;
+    public const int TotalComponents = 7;
 
     public static readonly string[] componentNames = {
         "Beacon",
@@ -23,7 +24,8 @@ public static class GameComponentsLookup {
         "GameObject",
         "GameObjectRequest",
         "Position",
-        "Sprite"
+        "Sprite",
+        "ToDestroy"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -32,6 +34,7 @@ public static class GameComponentsLookup {
         typeof(GameObjectComponent),
         typeof(GameObjectRequestComponent),
         typeof(PositionComponent),
-        typeof(SpriteComponent)
+        typeof(SpriteComponent),
+        typeof(ToDestroyComponent)
     };
 }
