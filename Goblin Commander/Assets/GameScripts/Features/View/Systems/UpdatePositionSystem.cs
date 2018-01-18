@@ -6,7 +6,7 @@ public class UpdatePositionSystem : ReactiveSystem<GameEntity>
 {
     public UpdatePositionSystem(Contexts contexts) : base(contexts.game) { }
 	
-	    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
+	protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
         return context.CreateCollector(GameMatcher.Position.Added());
     }
