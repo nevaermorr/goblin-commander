@@ -27,7 +27,7 @@ public class PlaceBeaconSystem : ReactiveSystem<InputEntity>
         foreach (InputEntity entity in entities)
         {
             GameEntity beaconEntity = gameContext.CreateEntity();
-            beaconEntity.AddPosition(entity.position.Value);
+            beaconEntity.AddPosition(entity.position);
             beaconEntity.AddBeacon(beaconEntity, 5f);
         }
     }

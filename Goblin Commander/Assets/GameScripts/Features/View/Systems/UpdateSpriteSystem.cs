@@ -19,8 +19,8 @@ public class UpdateSpriteSystem : ReactiveSystem<GameEntity> {
     {
         foreach (GameEntity entity in entities)
         {
-            SpriteRenderer spriteRenderer = GetOrAddSpriteRenderer(entity.gameObject.Value);
-            spriteRenderer.sprite = entity.sprite.Value;
+            SpriteRenderer spriteRenderer = GetOrAddSpriteRenderer(entity.gameObject);
+            spriteRenderer.sprite = entity.sprite;
         }
     }
 

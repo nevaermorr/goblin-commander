@@ -20,7 +20,7 @@ public class UpdatePositionSystem : ReactiveSystem<GameEntity>
     {
         foreach (GameEntity entity in entities)
         {
-            entity.gameObject.Value.transform.position = (Vector3) entity.position.Value;
+            entity.gameObject.Value.transform.position = (Vector3) entity.position;
         }
     }
 }

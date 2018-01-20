@@ -47,6 +47,6 @@ public class MoveSystem : ReactiveSystem<GameEntity>
 
     private void MakeStep(GameEntity entity, Vector2 step)
     {
-        entity.ReplacePosition(entity.position.Value + step);
+        entity.ReplacePosition(entity.position + step);
     }
 }

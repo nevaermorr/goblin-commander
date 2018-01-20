@@ -15,4 +15,9 @@ public class PositionComponent : IComponent
 	{
 		return positionComponent.Value;
 	}
+
+	public static implicit operator Vector3(PositionComponent positionComponent)
+	{
+		return (Vector3) positionComponent.Value;
+	}
 }

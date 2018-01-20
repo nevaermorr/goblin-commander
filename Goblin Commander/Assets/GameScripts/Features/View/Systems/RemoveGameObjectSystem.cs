@@ -21,7 +21,7 @@ public class RemoveGameObjectSystem : ReactiveSystem<GameEntity> {
     {
         foreach (GameEntity entity in entities)
         {
-            GameObject.Destroy(entity.gameObject.Value);
+            GameObject.Destroy(entity.gameObject);
         }
     }
 
