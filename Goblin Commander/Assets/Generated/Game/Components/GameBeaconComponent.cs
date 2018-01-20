@@ -11,16 +11,18 @@ public partial class GameEntity {
     public BeaconComponent beacon { get { return (BeaconComponent)GetComponent(GameComponentsLookup.Beacon); } }
     public bool hasBeacon { get { return HasComponent(GameComponentsLookup.Beacon); } }
 
-    public void AddBeacon(float newRange) {
+    public void AddBeacon(GameEntity newEntity, float newRange) {
         var index = GameComponentsLookup.Beacon;
         var component = CreateComponent<BeaconComponent>(index);
+        component.Entity = newEntity;
         component.Range = newRange;
         AddComponent(index, component);
     }
 
-    public void ReplaceBeacon(float newRange) {
+    public void ReplaceBeacon(GameEntity newEntity, float newRange) {
         var index = GameComponentsLookup.Beacon;
         var component = CreateComponent<BeaconComponent>(index);
+        component.Entity = newEntity;
         component.Range = newRange;
         ReplaceComponent(index, component);
     }

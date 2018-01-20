@@ -9,14 +9,15 @@ public class MoveSystem : ReactiveSystem<GameEntity>
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
         return context.CreateCollector(GameMatcher.AllOf(
-            GameMatcher.Move,
+            GameMatcher.MoveTarget,
+            GameMatcher.Mobility,
             GameMatcher.Position
         ));
     }
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.hasMove;
+        return entity.hasMoveTarget && entity.hasMobility;
     }
 
     protected override void Execute(List<GameEntity> entities)
@@ -27,8 +28,8 @@ public class MoveSystem : ReactiveSystem<GameEntity>
     }
 
     private void Move(GameEntity entity) {
-        Vector2 path = entity.move.Target - entity.position.Value;
-        float stepLength = entity.move.Speed * Time.deltaTime;
+        Vector2 path = entity.moveTarget.Value - entity.position.Value;
+        float stepLength = entity.mobility.MovementSpeed * Time.deltaTime;
         if (stepLength >= path.magnitude)
         {
             ArriveAtDestination(entity);
@@ -40,8 +41,8 @@ public class MoveSystem : ReactiveSystem<GameEntity>
 
     private void ArriveAtDestination(GameEntity entity)
     {
-        entity.ReplacePosition(entity.move.Target);
-        entity.RemoveMove();
+        entity.ReplacePosition(entity.moveTarget);
+        entity.RemoveMoveTarget();
     }
 
     private void MakeStep(GameEntity entity, Vector2 step)

@@ -5,4 +5,14 @@ using Entitas;
 public class PositionComponent : IComponent
 {
 	public Vector2 Value;
+
+	public bool IsInRangeOf(Vector2 targetPosition, float range)
+	{
+		return Vector2.Distance(Value, targetPosition) <= range;
+	}
+
+	public static implicit operator Vector2(PositionComponent positionComponent)
+	{
+		return positionComponent.Value;
+	}
 }

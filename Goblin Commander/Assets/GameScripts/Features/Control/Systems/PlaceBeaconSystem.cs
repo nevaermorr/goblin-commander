@@ -5,12 +5,10 @@ using Entitas;
 public class PlaceBeaconSystem : ReactiveSystem<InputEntity>
 {
     private readonly GameContext gameContext;
-    private readonly InputContext inputContext;
 
     public PlaceBeaconSystem(Contexts contexts) : base(contexts.input)
     { 
         gameContext = contexts.game;
-        inputContext = contexts.input;
     }
 
     protected override ICollector<InputEntity> GetTrigger(IContext<InputEntity> context)
@@ -28,10 +26,9 @@ public class PlaceBeaconSystem : ReactiveSystem<InputEntity>
     {
         foreach (InputEntity entity in entities)
         {
-            GameEntity beacon = gameContext.CreateEntity();
-            beacon.AddBeacon(5f);
-            beacon.AddPosition(entity.position.Value);
-            Debug.Log("dropping beacon at " + entity.position.Value);
+            GameEntity beaconEntity = gameContext.CreateEntity();
+            beaconEntity.AddPosition(entity.position.Value);
+            beaconEntity.AddBeacon(beaconEntity, 5f);
         }
     }
 }

@@ -21,6 +21,6 @@ public class GenerateCharacterSystem : IInitializeSystem
         testCharacter.AddGameObjectRequest("Goblin");
         testCharacter.AddCharacter(CharacterType.goblin);
         testCharacter.AddPosition(Vector2.zero);
-        testCharacter.AddMove(new Vector2(3,3), 2f);
+        testCharacter.AddMobility(2f);
     }
 }
