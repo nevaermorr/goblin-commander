@@ -12,16 +12,18 @@ public static class InputComponentsLookup {
     public const int MouseLeft = 1;
     public const int MousePressed = 2;
     public const int MouseReleased = 3;
-    public const int Position = 4;
-    public const int ToDestroy = 5;
+    public const int MouseRight = 4;
+    public const int Position = 5;
+    public const int ToDestroy = 6;
 
-    public const int TotalComponents = 6;
+    public const int TotalComponents = 7;
 
     public static readonly string[] componentNames = {
         "MouseDown",
         "MouseLeft",
         "MousePressed",
         "MouseReleased",
+        "MouseRight",
         "Position",
         "ToDestroy"
     };
@@ -31,6 +33,7 @@ public static class InputComponentsLookup {
         typeof(MouseLeftComponent),
         typeof(MousePressedComponent),
         typeof(MouseReleasedComponent),
+        typeof(MouseRightComponent),
         typeof(PositionComponent),
         typeof(ToDestroyComponent)
     };
