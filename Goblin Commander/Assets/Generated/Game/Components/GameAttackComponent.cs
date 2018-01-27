@@ -11,19 +11,21 @@ public partial class GameEntity {
     public AttackComponent attack { get { return (AttackComponent)GetComponent(GameComponentsLookup.Attack); } }
     public bool hasAttack { get { return HasComponent(GameComponentsLookup.Attack); } }
 
-    public void AddAttack(float newPower, float newRange) {
+    public void AddAttack(float newPower, float newRange, float newCooldownTime) {
         var index = GameComponentsLookup.Attack;
         var component = CreateComponent<AttackComponent>(index);
         component.Power = newPower;
         component.Range = newRange;
+        component.CooldownTime = newCooldownTime;
         AddComponent(index, component);
     }
 
-    public void ReplaceAttack(float newPower, float newRange) {
+    public void ReplaceAttack(float newPower, float newRange, float newCooldownTime) {
         var index = GameComponentsLookup.Attack;
         var component = CreateComponent<AttackComponent>(index);
         component.Power = newPower;
         component.Range = newRange;
+        component.CooldownTime = newCooldownTime;
         ReplaceComponent(index, component);
     }
 

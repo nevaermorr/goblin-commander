@@ -27,7 +27,7 @@ public class AttackCurrentEnemySystem : IExecuteSystem
                 characterEntity.attack.Range))
             {
                 characterEntity.CancelMovement();
-                characterEntity.Attack(characterEntity.currentEnemy);
+                characterEntity.attack.DeliverTo(characterEntity.currentEnemy);
             }
         }
     }

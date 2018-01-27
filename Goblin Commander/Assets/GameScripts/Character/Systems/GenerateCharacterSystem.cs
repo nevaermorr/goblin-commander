@@ -37,7 +37,7 @@ public class GenerateCharacterSystem : IInitializeSystem
         testCharacter.AddPosition(Vector2.zero);
         testCharacter.AddFaction(faction);
         testCharacter.AddSightRange(1f);
-        testCharacter.AddAttack(1f, 0.5f);
+        testCharacter.AddAttack(1f, 0.5f, 1f);
 
         return testCharacter;
     }

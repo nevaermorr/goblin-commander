@@ -11,23 +11,25 @@ public static class GameComponentsLookup {
     public const int Attack = 0;
     public const int Beacon = 1;
     public const int CharacterType = 2;
-    public const int CurrentEnemy = 3;
-    public const int Faction = 4;
-    public const int GameObject = 5;
-    public const int GameObjectRequest = 6;
-    public const int Mobility = 7;
-    public const int MoveTarget = 8;
-    public const int Position = 9;
-    public const int SightRange = 10;
-    public const int Sprite = 11;
-    public const int ToDestroy = 12;
+    public const int Cooldown = 3;
+    public const int CurrentEnemy = 4;
+    public const int Faction = 5;
+    public const int GameObject = 6;
+    public const int GameObjectRequest = 7;
+    public const int Mobility = 8;
+    public const int MoveTarget = 9;
+    public const int Position = 10;
+    public const int SightRange = 11;
+    public const int Sprite = 12;
+    public const int ToDestroy = 13;
 
-    public const int TotalComponents = 13;
+    public const int TotalComponents = 14;
 
     public static readonly string[] componentNames = {
         "Attack",
         "Beacon",
         "CharacterType",
+        "Cooldown",
         "CurrentEnemy",
         "Faction",
         "GameObject",
@@ -44,6 +46,7 @@ public static class GameComponentsLookup {
         typeof(AttackComponent),
         typeof(BeaconComponent),
         typeof(CharacterTypeComponent),
+        typeof(CooldownComponent),
         typeof(CurrentEnemyComponent),
         typeof(FactionComponent),
         typeof(GameObjectComponent),
