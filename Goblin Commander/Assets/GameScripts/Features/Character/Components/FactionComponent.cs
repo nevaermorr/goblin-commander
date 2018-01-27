@@ -40,4 +40,9 @@ public partial class GameEntity
             return this.hasFaction && this.faction == Faction.Neutral;
         }
     }
+
+    public bool BelongsToFaction(Faction faction)
+    {
+        return this.hasFaction && this.faction == faction;
+    }
 }

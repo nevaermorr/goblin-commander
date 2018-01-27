@@ -15,17 +15,16 @@ public class MoveSystem : ReactiveSystem<GameEntity>
         ));
     }
 
-    protected override bool Filter(GameEntity entity)
+    protected override bool Filter(GameEntity movableEntity)
     {
-        return entity.hasMoveTarget
-            && entity.hasMobility
-            && entity.IsPlayer;
+        return movableEntity.hasMoveTarget
+            && movableEntity.hasMobility;
     }
 
-    protected override void Execute(List<GameEntity> entities)
+    protected override void Execute(List<GameEntity> movableEntities)
     {
-        foreach (var entity in entities) {
-            Move(entity);
+        foreach (var movableEntity in movableEntities) {
+            Move(movableEntity);
         }
     }
 

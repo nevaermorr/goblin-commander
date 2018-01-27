@@ -18,8 +18,20 @@ public class BeaconComponent : IComponent{
     {
         foreach (GameEntity characterEntity in GetMobileCharacterEntitiesInRange())
         {
+            if (!BelongsToRelevantFactionFor(characterEntity))
+            {
+                continue;
+            }
             characterEntity.ReplaceMoveTarget(beaconPosition);
         }
+    }
+
+    private bool BelongsToRelevantFactionFor(GameEntity characterEntity)
+    {
+        return (
+            !this.Entity.hasFaction
+            || characterEntity.BelongsToFaction(this.Entity.faction)
+        );
     }
 
     private GameEntity[] GetMobileCharacterEntitiesInRange()

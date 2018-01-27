@@ -12,17 +12,17 @@ public class SummonCharacterToBeaconSystem : ReactiveSystem<GameEntity>
         return context.CreateCollector(GameMatcher.Beacon);
     }
 
-    protected override bool Filter(GameEntity entity)
+    protected override bool Filter(GameEntity beaconEntity)
     {
-        return entity.hasBeacon;
+        return beaconEntity.hasBeacon;
     }
 
-    protected override void Execute(List<GameEntity> entities)
+    protected override void Execute(List<GameEntity> beaconEntities)
     {
-        foreach (var entity in entities)
+        foreach (var beaconEntity in beaconEntities)
         {
-            entity.beacon.SummonCharactersInRange();
-            entity.isToDestroy = true;
+            beaconEntity.beacon.SummonCharactersInRange();
+            beaconEntity.isToDestroy = true;
         }
     }
 }
