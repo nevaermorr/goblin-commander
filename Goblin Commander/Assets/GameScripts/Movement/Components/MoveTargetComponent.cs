@@ -11,3 +11,14 @@ public class MoveTargetComponent : IComponent
 		return moveTargetComponent.Value;
 	}
 }
+
+public partial class GameEntity
+{
+	public void CancelMovement()
+	{
+        if (this.hasMoveTarget)
+        {
+            this.RemoveMoveTarget();
+        }
+	}
+}

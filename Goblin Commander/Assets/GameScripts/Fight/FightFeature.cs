@@ -6,5 +6,6 @@ public class FightFeature : Feature
     {
         Add(new ChooseEnemySystem(contexts));
         Add(new FollowEnemySystem(contexts));
+        Add(new AttackCurrentEnemySystem(contexts));
     }
 }

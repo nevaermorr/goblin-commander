@@ -34,7 +34,7 @@ public partial class GameEntity
         foreach (var positionEntity 
             in Contexts.sharedInstance.game.GetGroup(GameMatcher.Position).GetEntities())
         {
-            if (Vector3.Distance(positionEntity.position, this.position) <= this.sightRange)
+            if (positionEntity.position.IsInRangeOf(this.position, this.sightRange))
             {
                 entitiesInSight.Add(positionEntity);
             }
