@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     private Systems CreateFeatures(Contexts contexts)
     {
         return new Feature("Systems")
-            .Add(new GeneratorFeature(contexts))
+            .Add(new CharacterFeature(contexts))
             .Add(new InputFeature(contexts))
             .Add(new ControlFeature(contexts))
             .Add(new MovementFeature(contexts))

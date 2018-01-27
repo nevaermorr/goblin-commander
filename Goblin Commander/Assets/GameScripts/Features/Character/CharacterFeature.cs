@@ -1,8 +1,8 @@
 ﻿using Entitas;
 
-public class GeneratorFeature : Feature
+public class CharacterFeature : Feature
 {
-	public GeneratorFeature(Contexts contexts) : base("Generator")
+	public CharacterFeature(Contexts contexts) : base("Character")
     {
         Add(new GenerateCharacterSystem(contexts));
         Add(new AssignCharacterSpriteSystem(contexts));
