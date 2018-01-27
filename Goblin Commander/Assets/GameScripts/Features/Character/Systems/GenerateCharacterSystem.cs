@@ -12,15 +12,31 @@ public class GenerateCharacterSystem : IInitializeSystem
 
     public void Initialize()
     {
-        CreateTestCharacter();
+        CreateTestPlayerAt(new Vector2(1, 1));
+        CreateTestEnemyAt(new Vector2(5, 5));
     }
 
-    private void CreateTestCharacter()
+    private void CreateTestPlayerAt(Vector2 position)
+    {
+        GameEntity testCharacter = CreateTestCharacter(Faction.Player);
+        testCharacter.ReplacePosition(position);
+    }
+
+    private void CreateTestEnemyAt(Vector2 position)
+    {
+        GameEntity testCharacter = CreateTestCharacter(Faction.Enemy);
+        testCharacter.ReplacePosition(position);
+    }
+
+    private GameEntity CreateTestCharacter(Faction faction)
     {
         GameEntity testCharacter = context.CreateEntity();
         testCharacter.AddGameObjectRequest("Goblin");
         testCharacter.AddCharacterType(CharacterType.goblin);
-        testCharacter.AddPosition(Vector2.zero);
         testCharacter.AddMobility(2f);
+        testCharacter.AddPosition(Vector2.zero);
+        testCharacter.AddFaction(faction);
+
+        return testCharacter;
     }
 }

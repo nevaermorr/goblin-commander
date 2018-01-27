@@ -17,7 +17,9 @@ public class MoveSystem : ReactiveSystem<GameEntity>
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.hasMoveTarget && entity.hasMobility;
+        return entity.hasMoveTarget
+            && entity.hasMobility
+            && entity.IsPlayer;
     }
 
     protected override void Execute(List<GameEntity> entities)
