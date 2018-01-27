@@ -45,4 +45,11 @@ public partial class GameEntity
     {
         return this.hasFaction && this.faction == faction;
     }
+
+    public bool IsHostileTowards(GameEntity entity)
+    {
+        return this.hasFaction
+            && entity.hasFaction
+            && this.faction != entity.faction;
+    }
 }

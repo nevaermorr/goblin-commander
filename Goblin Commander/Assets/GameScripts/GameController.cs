@@ -29,6 +29,7 @@ public class GameController : MonoBehaviour
             .Add(new InputFeature(contexts))
             .Add(new ControlFeature(contexts))
             .Add(new MovementFeature(contexts))
+            .Add(new FightFeature(contexts))
             .Add(new ViewFeature(contexts))
             .Add(new CommonFeature(contexts));
     }

@@ -10,26 +10,30 @@ public static class GameComponentsLookup {
 
     public const int Beacon = 0;
     public const int CharacterType = 1;
-    public const int Faction = 2;
-    public const int GameObject = 3;
-    public const int GameObjectRequest = 4;
-    public const int Mobility = 5;
-    public const int MoveTarget = 6;
-    public const int Position = 7;
-    public const int Sprite = 8;
-    public const int ToDestroy = 9;
+    public const int CurrentEnemy = 2;
+    public const int Faction = 3;
+    public const int GameObject = 4;
+    public const int GameObjectRequest = 5;
+    public const int Mobility = 6;
+    public const int MoveTarget = 7;
+    public const int Position = 8;
+    public const int SightRange = 9;
+    public const int Sprite = 10;
+    public const int ToDestroy = 11;
 
-    public const int TotalComponents = 10;
+    public const int TotalComponents = 12;
 
     public static readonly string[] componentNames = {
         "Beacon",
         "CharacterType",
+        "CurrentEnemy",
         "Faction",
         "GameObject",
         "GameObjectRequest",
         "Mobility",
         "MoveTarget",
         "Position",
+        "SightRange",
         "Sprite",
         "ToDestroy"
     };
@@ -37,12 +41,14 @@ public static class GameComponentsLookup {
     public static readonly System.Type[] componentTypes = {
         typeof(BeaconComponent),
         typeof(CharacterTypeComponent),
+        typeof(CurrentEnemyComponent),
         typeof(FactionComponent),
         typeof(GameObjectComponent),
         typeof(GameObjectRequestComponent),
         typeof(MobilityComponent),
         typeof(MoveTargetComponent),
         typeof(PositionComponent),
+        typeof(SightRangeComponent),
         typeof(SpriteComponent),
         typeof(ToDestroyComponent)
     };
