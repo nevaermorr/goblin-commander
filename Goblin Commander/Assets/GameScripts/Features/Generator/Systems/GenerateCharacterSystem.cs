@@ -19,7 +19,7 @@ public class GenerateCharacterSystem : IInitializeSystem
     {
         GameEntity testCharacter = context.CreateEntity();
         testCharacter.AddGameObjectRequest("Goblin");
-        testCharacter.AddCharacter(CharacterType.goblin);
+        testCharacter.AddCharacterType(CharacterType.goblin);
         testCharacter.AddPosition(Vector2.zero);
         testCharacter.AddMobility(2f);
     }

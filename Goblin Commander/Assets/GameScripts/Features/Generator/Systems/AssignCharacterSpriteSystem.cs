@@ -16,19 +16,19 @@ public class AssignCharacterSpriteSystem : ReactiveSystem<GameEntity>
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return context.CreateCollector(GameMatcher.Character.Added());
+        return context.CreateCollector(GameMatcher.CharacterType.Added());
     }
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.hasCharacter && !entity.hasSprite;
+        return entity.hasCharacterType && !entity.hasSprite;
     }
 
     protected override void Execute(List<GameEntity> entities)
     {
         foreach (GameEntity entity in entities)
         {
-            Sprite sprite = Resources.Load<Sprite>(CharacterSpritePath[entity.character.Type]);
+            Sprite sprite = Resources.Load<Sprite>(CharacterSpritePath[entity.characterType]);
             entity.AddSprite(sprite);
         }
     }

@@ -33,7 +33,7 @@ public class BeaconComponent : IComponent{
         return Contexts.sharedInstance.game.GetGroup(
             GameMatcher.AllOf(
                 GameMatcher.Position,
-                GameMatcher.Character,
+                GameMatcher.CharacterType,
                 GameMatcher.Mobility
             )).GetEntities();
     }

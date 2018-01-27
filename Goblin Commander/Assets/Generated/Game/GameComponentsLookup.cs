@@ -9,7 +9,7 @@
 public static class GameComponentsLookup {
 
     public const int Beacon = 0;
-    public const int Character = 1;
+    public const int CharacterType = 1;
     public const int GameObject = 2;
     public const int GameObjectRequest = 3;
     public const int Mobility = 4;
@@ -22,7 +22,7 @@ public static class GameComponentsLookup {
 
     public static readonly string[] componentNames = {
         "Beacon",
-        "Character",
+        "CharacterType",
         "GameObject",
         "GameObjectRequest",
         "Mobility",
@@ -34,7 +34,7 @@ public static class GameComponentsLookup {
 
     public static readonly System.Type[] componentTypes = {
         typeof(BeaconComponent),
-        typeof(CharacterComponent),
+        typeof(CharacterTypeComponent),
         typeof(GameObjectComponent),
         typeof(GameObjectRequestComponent),
         typeof(MobilityComponent),
