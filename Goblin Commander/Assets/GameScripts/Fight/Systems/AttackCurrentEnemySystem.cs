@@ -23,11 +23,18 @@ public class AttackCurrentEnemySystem : IExecuteSystem
         foreach (var characterEntity in charactersGroup.GetEntities())
         {
             if (characterEntity.currentEnemy.Value.position.IsInRangeOf(
-                characterEntity.position,
-                characterEntity.attack.Range))
+                    characterEntity.position,
+                    characterEntity.attack.Range)
+                && characterEntity.attack.IsReady()
+                )
             {
                 characterEntity.CancelMovement();
-                characterEntity.attack.DeliverTo(characterEntity.currentEnemy);
+                gameContext.CreateEntity().AddDamage(
+                    characterEntity.attack.Power,
+                    characterEntity,
+                    characterEntity.currentEnemy);
+
+                characterEntity.attack.StartCoolDown();
             }
         }
     }

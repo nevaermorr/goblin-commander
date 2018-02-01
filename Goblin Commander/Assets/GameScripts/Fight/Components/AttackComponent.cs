@@ -14,18 +14,12 @@ public class AttackComponent : IComponent
         cooldownEntity = Contexts.sharedInstance.game.CreateEntity();
     }
 
-    public void DeliverTo(GameEntity targetEntity)
+    public void StartCoolDown()
     {
-        if (!IsReady())
-        {
-            return;
-        }
-        Debug.Log("attack for " + this.Power);
         cooldownEntity.ReplaceCooldown(CooldownTime);
-
     }
 
-    private bool IsReady()
+    public bool IsReady()
     {
         return !cooldownEntity.hasCooldown;
     }

@@ -13,17 +13,20 @@ public static class GameComponentsLookup {
     public const int CharacterType = 2;
     public const int Cooldown = 3;
     public const int CurrentEnemy = 4;
-    public const int Faction = 5;
-    public const int GameObject = 6;
-    public const int GameObjectRequest = 7;
-    public const int Mobility = 8;
-    public const int MoveTarget = 9;
-    public const int Position = 10;
-    public const int SightRange = 11;
-    public const int Sprite = 12;
-    public const int ToDestroy = 13;
+    public const int CurrentHealth = 5;
+    public const int Damage = 6;
+    public const int Faction = 7;
+    public const int GameObject = 8;
+    public const int GameObjectRequest = 9;
+    public const int MaxHealth = 10;
+    public const int Mobility = 11;
+    public const int MoveTarget = 12;
+    public const int Position = 13;
+    public const int SightRange = 14;
+    public const int Sprite = 15;
+    public const int ToDestroy = 16;
 
-    public const int TotalComponents = 14;
+    public const int TotalComponents = 17;
 
     public static readonly string[] componentNames = {
         "Attack",
@@ -31,9 +34,12 @@ public static class GameComponentsLookup {
         "CharacterType",
         "Cooldown",
         "CurrentEnemy",
+        "CurrentHealth",
+        "Damage",
         "Faction",
         "GameObject",
         "GameObjectRequest",
+        "MaxHealth",
         "Mobility",
         "MoveTarget",
         "Position",
@@ -48,9 +54,12 @@ public static class GameComponentsLookup {
         typeof(CharacterTypeComponent),
         typeof(CooldownComponent),
         typeof(CurrentEnemyComponent),
+        typeof(CurrentHealthComponent),
+        typeof(DamageComponent),
         typeof(FactionComponent),
         typeof(GameObjectComponent),
         typeof(GameObjectRequestComponent),
+        typeof(MaxHealthComponent),
         typeof(MobilityComponent),
         typeof(MoveTargetComponent),
         typeof(PositionComponent),
