@@ -1,12 +1,11 @@
 using Entitas;
 
-public class FightFeature : Feature
+public class CombatFeature : Feature
 {
-    public FightFeature(Contexts contexts) : base("Fight")
+    public CombatFeature(Contexts contexts) : base("Combat")
     {
         Add(new ChooseEnemySystem(contexts));
         Add(new FollowEnemySystem(contexts));
         Add(new AttackCurrentEnemySystem(contexts));
-        Add(new DamageSystem(contexts));
     }
 }
