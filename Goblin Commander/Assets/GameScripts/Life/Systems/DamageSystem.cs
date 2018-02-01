@@ -23,6 +23,7 @@ public class DamageSystem : ReactiveSystem<GameEntity>
         foreach (GameEntity damageEntity in entities)
         {
             HandleDamage(damageEntity.damage);
+            damageEntity.isToDestroy = true;
         }
     }
 
@@ -43,10 +44,5 @@ public class DamageSystem : ReactiveSystem<GameEntity>
         {
             throw new Exception();
         }
-    }
-
-    private void SubtractHealth()
-    {
-
     }
 }
