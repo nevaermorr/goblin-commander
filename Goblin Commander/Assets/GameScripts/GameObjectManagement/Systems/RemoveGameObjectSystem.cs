@@ -21,18 +21,8 @@ public class RemoveGameObjectSystem : ReactiveSystem<GameEntity> {
     {
         foreach (GameEntity entity in entities)
         {
+            Debug.Log("destroy");
             GameObject.Destroy(entity.gameObject);
         }
-    }
-
-    private SpriteRenderer GetOrAddSpriteRenderer(GameObject gameObject)
-    {
-        SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-
-        if (spriteRenderer == null)
-        {
-            spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
-        }
-        return spriteRenderer;
     }
 }

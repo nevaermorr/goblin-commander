@@ -31,7 +31,6 @@ public class GenerateCharacterSystem : IInitializeSystem
     private GameEntity CreateTestCharacter(Faction faction)
     {
         GameEntity testCharacter = context.CreateEntity();
-        testCharacter.AddGameObjectRequest(faction + " Goblin");
         testCharacter.AddCharacterType(CharacterType.goblin);
         testCharacter.AddMobility(2f);
         testCharacter.AddPosition(Vector2.zero);

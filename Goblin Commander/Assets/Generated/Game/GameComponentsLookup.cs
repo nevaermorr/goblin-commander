@@ -17,16 +17,14 @@ public static class GameComponentsLookup {
     public const int Damage = 6;
     public const int Faction = 7;
     public const int GameObject = 8;
-    public const int GameObjectRequest = 9;
-    public const int MaxHealth = 10;
-    public const int Mobility = 11;
-    public const int MoveTarget = 12;
-    public const int Position = 13;
-    public const int SightRange = 14;
-    public const int Sprite = 15;
-    public const int ToDestroy = 16;
+    public const int MaxHealth = 9;
+    public const int Mobility = 10;
+    public const int MoveTarget = 11;
+    public const int Position = 12;
+    public const int SightRange = 13;
+    public const int ToDestroy = 14;
 
-    public const int TotalComponents = 17;
+    public const int TotalComponents = 15;
 
     public static readonly string[] componentNames = {
         "Attack",
@@ -38,13 +36,11 @@ public static class GameComponentsLookup {
         "Damage",
         "Faction",
         "GameObject",
-        "GameObjectRequest",
         "MaxHealth",
         "Mobility",
         "MoveTarget",
         "Position",
         "SightRange",
-        "Sprite",
         "ToDestroy"
     };
 
@@ -58,13 +54,11 @@ public static class GameComponentsLookup {
         typeof(DamageComponent),
         typeof(FactionComponent),
         typeof(GameObjectComponent),
-        typeof(GameObjectRequestComponent),
         typeof(MaxHealthComponent),
         typeof(MobilityComponent),
         typeof(MoveTargetComponent),
         typeof(PositionComponent),
         typeof(SightRangeComponent),
-        typeof(SpriteComponent),
         typeof(ToDestroyComponent)
     };
 }

@@ -30,7 +30,7 @@ public class GameController : MonoBehaviour
             .Add(new ControlFeature(contexts))
             .Add(new CombatFeature(contexts))
             .Add(new MovementFeature(contexts))
-            .Add(new ViewFeature(contexts))
+            .Add(new GameObjectManagement(contexts))
             .Add(new LifeFeature(contexts))
             .Add(new CommonFeature(contexts));
     }

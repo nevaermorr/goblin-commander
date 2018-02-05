@@ -35,7 +35,7 @@ public class DamageSystem : ReactiveSystem<GameEntity>
                 damage.Target.currentHealth - damage.Value
             );
         }
-        catch (Exception e) { }
+        catch {}
     }
 
     private void CheckIfDamagable(GameEntity targetEntity)
