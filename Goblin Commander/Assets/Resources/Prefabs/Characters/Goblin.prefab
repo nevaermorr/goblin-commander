@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4488304378112740}
   - component: {fileID: 212731652656715506}
-  - component: {fileID: 70523267790814404}
+  - component: {fileID: 143074773808242036}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Untagged
@@ -41,21 +41,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &70523267790814404
-CapsuleCollider2D:
+--- !u!143 &143074773808242036
+CharacterController:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1518434822581678}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.4, y: 0.3}
-  m_Direction: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 0
+  m_Radius: 0.15
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &212731652656715506
 SpriteRenderer:
   m_ObjectHideFlags: 1

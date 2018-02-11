@@ -2,25 +2,22 @@
 using UnityEngine;
 using Entitas;
 
-public class UpdatePositionSystem : ReactiveSystem<GameEntity>
+public class UpdatePositionSystem : IExecuteSystem
 {
-    public UpdatePositionSystem(Contexts contexts) : base(contexts.game) { }
-	
-	protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
+    private readonly IGroup<GameEntity> spatialEntities;
+    public UpdatePositionSystem(Contexts contexts)
     {
-        return context.CreateCollector(GameMatcher.Position.Added());
+        spatialEntities = contexts.game.GetGroup(GameMatcher.AllOf(
+            GameMatcher.Position,
+            GameMatcher.GameObject
+        ));
     }
 
-    protected override bool Filter(GameEntity entity)
+    public void Execute()
     {
-        return entity.hasPosition && entity.hasGameObject;
-    }
-
-    protected override void Execute(List<GameEntity> entities)
-    {
-        foreach (GameEntity entity in entities)
+        foreach (GameEntity entity in spatialEntities)
         {
-            entity.gameObject.Value.transform.position = (Vector3) entity.position;
+            entity.ReplacePosition(entity.gameObject.Value.transform.position);
         }
     }
 }

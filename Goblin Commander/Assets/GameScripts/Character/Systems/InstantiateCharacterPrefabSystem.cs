@@ -30,7 +30,28 @@ public class InstantiateCharacterPrefabSystem : ReactiveSystem<GameEntity> {
                 CharacterPrefabService.GetCharacterPrefabForType(entity.characterType)
             ) as GameObject;
             characterObject.Link(entity, context);
+
             entity.AddGameObject(characterObject);
+            PutInPosition(characterObject, entity);
+            ExtractCharacterComponentEntity(characterObject, entity);
+        }
+    }
+
+    private void ExtractCharacterComponentEntity(GameObject characterObject, GameEntity entity)
+    {
+        CharacterController characterController = characterObject.GetComponent<CharacterController>();
+        if (characterController == null)
+        {
+            return;
+        }
+        entity.AddCharacterController(characterController);
+    }
+
+    private void PutInPosition(GameObject characterObject, GameEntity entity)
+    {
+        if (entity.hasPosition)
+        {
+            characterObject.transform.position = entity.position;
         }
     }
 }

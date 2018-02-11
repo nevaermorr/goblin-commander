@@ -10,25 +10,27 @@ public static class GameComponentsLookup {
 
     public const int Attack = 0;
     public const int Beacon = 1;
-    public const int CharacterType = 2;
-    public const int Cooldown = 3;
-    public const int CurrentEnemy = 4;
-    public const int CurrentHealth = 5;
-    public const int Damage = 6;
-    public const int Faction = 7;
-    public const int GameObject = 8;
-    public const int MaxHealth = 9;
-    public const int Mobility = 10;
-    public const int MoveTarget = 11;
-    public const int Position = 12;
-    public const int SightRange = 13;
-    public const int ToDestroy = 14;
+    public const int CharacterController = 2;
+    public const int CharacterType = 3;
+    public const int Cooldown = 4;
+    public const int CurrentEnemy = 5;
+    public const int CurrentHealth = 6;
+    public const int Damage = 7;
+    public const int Faction = 8;
+    public const int GameObject = 9;
+    public const int MaxHealth = 10;
+    public const int Mobility = 11;
+    public const int MoveTarget = 12;
+    public const int Position = 13;
+    public const int SightRange = 14;
+    public const int ToDestroy = 15;
 
-    public const int TotalComponents = 15;
+    public const int TotalComponents = 16;
 
     public static readonly string[] componentNames = {
         "Attack",
         "Beacon",
+        "CharacterController",
         "CharacterType",
         "Cooldown",
         "CurrentEnemy",
@@ -47,6 +49,7 @@ public static class GameComponentsLookup {
     public static readonly System.Type[] componentTypes = {
         typeof(AttackComponent),
         typeof(BeaconComponent),
+        typeof(CharacterControllerComponent),
         typeof(CharacterTypeComponent),
         typeof(CooldownComponent),
         typeof(CurrentEnemyComponent),
