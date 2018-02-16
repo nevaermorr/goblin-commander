@@ -23,9 +23,10 @@ public static class GameComponentsLookup {
     public const int MoveTarget = 12;
     public const int Position = 13;
     public const int SightRange = 14;
-    public const int ToDestroy = 15;
+    public const int SpriteRenderer = 15;
+    public const int ToDestroy = 16;
 
-    public const int TotalComponents = 16;
+    public const int TotalComponents = 17;
 
     public static readonly string[] componentNames = {
         "Attack",
@@ -43,6 +44,7 @@ public static class GameComponentsLookup {
         "MoveTarget",
         "Position",
         "SightRange",
+        "SpriteRenderer",
         "ToDestroy"
     };
 
@@ -62,6 +64,7 @@ public static class GameComponentsLookup {
         typeof(MoveTargetComponent),
         typeof(PositionComponent),
         typeof(SightRangeComponent),
+        typeof(SpriteRendererComponent),
         typeof(ToDestroyComponent)
     };
 }
