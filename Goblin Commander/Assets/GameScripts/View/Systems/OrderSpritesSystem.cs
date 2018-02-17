@@ -19,22 +19,17 @@ public class OrderSpritesSystem : IExecuteSystem
 
     private void SetSpriteOrder(SpriteRenderer spriteRenderer)
     {
-        var position = Camera.main.WorldToScreenPoint(spriteRenderer.transform.position);
-        int order = -(int) (
-            GetScreenPixelsToMaxIntModifier()
-            * (((position.y - 1) * Screen.width)
-                + position.x));
-        spriteRenderer.sortingOrder = order;
+        spriteRenderer.sortingOrder = GetSpriteOrderForScreenPosition(
+            Camera.main.WorldToScreenPoint(spriteRenderer.transform.position));
     }
 
-    private float GetScreenPixelsToMaxIntModifier()
+    private int GetSpriteOrderForScreenPosition(Vector3 position)
     {
-        float modifier = 1;
-        int pixelCount = Screen.width * Screen.height;
-        if (pixelCount > short.MaxValue)
-        {
-            modifier = short.MaxValue / (float)pixelCount; 
-        }
-        return modifier;
+        int order = -(int) (
+            SpriteOrderingService.PixelCountToMaxShortModifier
+            * (((position.y - 1) * Screen.width)
+                + position.x));
+        
+        return order;
     }
 }
