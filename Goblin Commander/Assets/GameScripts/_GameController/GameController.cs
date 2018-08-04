@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-
     private Systems systems;
     private Contexts contexts;
 
@@ -25,14 +24,9 @@ public class GameController : MonoBehaviour
     private Systems CreateFeatures(Contexts contexts)
     {
         return new Feature("Systems")
-            .Add(new CharacterFeature(contexts))
-            .Add(new InputFeature(contexts))
-            .Add(new ControlFeature(contexts))
-            .Add(new MovementFeature(contexts))
-            // .Add(new CombatFeature(contexts))
-            .Add(new GameObjectManagement(contexts))
-            .Add(new LifeFeature(contexts))
-            .Add(new ViewFeature(contexts))
-            .Add(new CommonFeature(contexts));
+            .Add(new EngineFeature(contexts))
+            .Add(new GameElementsCreationFeature(contexts))
+            .Add(new IngameMechacnicsFeature(contexts))
+        ;
     }
 }

@@ -1,8 +1,8 @@
 using Entitas;
 
-public class CommonFeature : Feature
+public class CommonEntitiesBehaviourFeature : Feature
 {
-    public CommonFeature(Contexts contexts) : base ("Common")
+    public CommonEntitiesBehaviourFeature(Contexts contexts) : base ("Common entities behaviour")
     {
         Add(new CooldownSystem(contexts));
         Add(new DestroyEntitySystem(contexts));

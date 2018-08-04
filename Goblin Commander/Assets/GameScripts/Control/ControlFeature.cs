@@ -1,8 +1,8 @@
 using Entitas;
 
-public class ControlFeature : Feature
+public class CharacterControlFeature : Feature
 {
-    public ControlFeature(Contexts contexts) : base("Control")
+    public CharacterControlFeature(Contexts contexts) : base("Control")
     {
         Add(new PlaceBeaconSystem(contexts));
         Add(new SummonCharacterToBeaconSystem(contexts));

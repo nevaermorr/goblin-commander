@@ -33,12 +33,12 @@ public class InstantiateCharacterPrefabSystem : ReactiveSystem<GameEntity> {
 
             entity.AddGameObject(characterObject);
             PutInPosition(characterObject, entity);
-            ExtractCharacterComponentEntity(characterObject, entity);
-            ExtractSpriteRendererComponent(characterObject, entity);
+            ExtractCharacterControllerEntity(characterObject, entity);
+            ExtractSpriteRendererEntity(characterObject, entity);
         }
     }
 
-    private void ExtractCharacterComponentEntity(GameObject characterObject, GameEntity entity)
+    private void ExtractCharacterControllerEntity(GameObject characterObject, GameEntity entity)
     {
         CharacterController characterController = characterObject.GetComponent<CharacterController>();
         if (characterController == null)
@@ -48,7 +48,7 @@ public class InstantiateCharacterPrefabSystem : ReactiveSystem<GameEntity> {
         entity.AddCharacterController(characterController);
     }
     
-    private void ExtractSpriteRendererComponent(GameObject characterObject, GameEntity entity)
+    private void ExtractSpriteRendererEntity(GameObject characterObject, GameEntity entity)
     {
         
         SpriteRenderer spriteRenderer = characterObject.GetComponent<SpriteRenderer>();
