@@ -6,6 +6,5 @@ public class ViewFeature : Feature
     {
         Add(new SetUpSpriteRendererSystem(contexts));
         Add(new OrderSpritesSystem(contexts));
-        Add(new RemoveGameObjectSystem(contexts));
     }
 }
