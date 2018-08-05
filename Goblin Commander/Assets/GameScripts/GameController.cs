@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
     {
         return new Feature("Systems")
             .Add(new EngineFeature(contexts))
-            .Add(new GameElementsCreationFeature(contexts))
+            .Add(new GeneratorFeature(contexts))
             .Add(new IngameMechacnicsFeature(contexts))
         ;
     }
