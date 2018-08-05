@@ -39,7 +39,7 @@ public class BeaconComponent : IComponent{
         return GetAllMobileCharacterEntities().Where(IsEntityInRange).ToArray();
     }
 
-    // TODO this should to some more appropriate scope.
+    // TODO this should go to some more appropriate scope.
     private GameEntity[] GetAllMobileCharacterEntities()
     {
         return Contexts.sharedInstance.game.GetGroup(

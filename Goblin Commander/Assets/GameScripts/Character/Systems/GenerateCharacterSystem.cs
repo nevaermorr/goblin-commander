@@ -3,11 +3,11 @@ using Entitas;
 
 public class GenerateCharacterSystem : IInitializeSystem
 {
-    private readonly GameContext context;
+    private readonly GameContext gameContext;
 
     public GenerateCharacterSystem(Contexts contexts)
     {
-        context = contexts.game;
+        gameContext = contexts.game;
     }
 
     public void Initialize()
@@ -30,7 +30,7 @@ public class GenerateCharacterSystem : IInitializeSystem
 
     private GameEntity CreateTestCharacter(Faction faction)
     {
-        GameEntity testCharacter = context.CreateEntity();
+        GameEntity testCharacter = gameContext.CreateEntity();
         testCharacter.AddCharacterType(CharacterType.goblin);
         testCharacter.AddMobility(2f);
         testCharacter.AddPosition(Vector2.zero);
