@@ -3,13 +3,13 @@ using Entitas;
 using Entitas.Unity;
 using UnityEngine;
 
-public interface IToDestroyEntity : IEntity, IToDestroy { }
+public interface IToDestroyMultiEntity : IEntity, IToDestroyEntity { }
 
 // Required for multi-context system.
-public partial class GameEntity : IToDestroyEntity { }
-public partial class InputEntity : IToDestroyEntity { }
+public partial class GameEntity : IToDestroyMultiEntity { }
+public partial class InputEntity : IToDestroyMultiEntity { }
 
-public class DestroyEntitySystem : MultiReactiveSystem<IToDestroyEntity, Contexts>
+public class DestroyEntitySystem : MultiReactiveSystem<IToDestroyMultiEntity, Contexts>
 {
     public DestroyEntitySystem(Contexts contexts) : base (contexts) { }
 
@@ -22,12 +22,12 @@ public class DestroyEntitySystem : MultiReactiveSystem<IToDestroyEntity, Context
         };
     }
 
-    protected override bool Filter(IToDestroyEntity entity)
+    protected override bool Filter(IToDestroyMultiEntity entity)
     {
         return entity.isToDestroy;
     }
 
-    protected override void Execute(List<IToDestroyEntity> entities)
+    protected override void Execute(List<IToDestroyMultiEntity> entities)
     {
         foreach (var entity in entities)
         {

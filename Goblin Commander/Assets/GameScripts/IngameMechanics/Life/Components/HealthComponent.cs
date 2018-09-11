@@ -1,5 +1,7 @@
 using Entitas;
+using Entitas.CodeGeneration.Attributes;
 
+[Game]
 public class MaxHealthComponent : IComponent
 {
     public float Value;
@@ -10,6 +12,7 @@ public class MaxHealthComponent : IComponent
     }
 }
 
+[Game, Event(EventTarget.Any)]
 public class CurrentHealthComponent : IComponent
 {
     public float Value;

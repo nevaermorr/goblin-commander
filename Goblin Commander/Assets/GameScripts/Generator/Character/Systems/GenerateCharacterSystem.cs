@@ -26,6 +26,7 @@ public class GenerateCharacterSystem : IInitializeSystem
     {
         GameEntity testCharacter = CreateTestCharacter(Faction.Enemy);
         testCharacter.ReplacePosition(position);
+        testCharacter.ReplaceAttack(0.1f, 0.5f, 0.2f);
     }
 
     private GameEntity CreateTestCharacter(Faction faction)
@@ -36,7 +37,7 @@ public class GenerateCharacterSystem : IInitializeSystem
         testCharacter.AddPosition(Vector2.zero);
         testCharacter.AddFaction(faction);
         testCharacter.AddSightRange(1f);
-        testCharacter.AddAttack(1f, 0.5f, 1f);
+        testCharacter.AddAttack(0.1f, 0.5f, 0.1f);
         testCharacter.AddHealth(5f);
 
         return testCharacter;
