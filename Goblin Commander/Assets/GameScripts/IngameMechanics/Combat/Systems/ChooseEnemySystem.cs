@@ -31,12 +31,12 @@ public class ChooseEnemySystem : IExecuteSystem
 
     private GameEntity ChooseEnemyFor(GameEntity characterEntity)
     {
-        GameEntity chosenEnemy = null;
+        GameEntity chosenEnemyEntity = null;
         foreach (var enemyEntity in characterEntity.GetEnemiesInSight())
         {
-            chosenEnemy = characterEntity.GetPreferredEnemy(chosenEnemy, enemyEntity);
+            chosenEnemyEntity = characterEntity.GetPreferredEnemy(chosenEnemyEntity, enemyEntity);
         }
-        return chosenEnemy;
+        return chosenEnemyEntity;
     }
 }
 

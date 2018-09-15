@@ -7,5 +7,6 @@ public class IngameMechacnicsFeature : Feature {
         Add(new CombatFeature(contexts));
         Add(new MovementFeature(contexts));
         Add(new LifeFeature(contexts));
+        Add(new CombatCleanupFeature(contexts));
     }
 }
