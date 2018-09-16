@@ -11,10 +11,10 @@ public class HealthbarBehaviour : MonoBehaviour, ICurrentHealthListener {
 		Color.green
 	};
 
-	[SerializeField]
+    [SerializeField]
+    private GameObject owner;
+    [SerializeField]
 	private SpriteRenderer[] cells;
-	[SerializeField]
-	private GameObject owner;
 
 	private GameEntity healthListener;
     private float cellGradientHealthPercentage;
@@ -46,11 +46,13 @@ public class HealthbarBehaviour : MonoBehaviour, ICurrentHealthListener {
 
     public void OnCurrentHealth(GameEntity entity, float currentHealth)
     {
-		if (entity == owner.GetEntityLink().entity)
+        if (entity != owner.GetEntityLink().entity)
         {
-            float healthPercentage = currentHealth / entity.maxHealth;
-			SetHealthPercentage(healthPercentage);
-		}
+            return;
+        }
+
+        float healthPercentage = currentHealth / entity.maxHealth;
+		SetHealthPercentage(healthPercentage);
     }
 
 	public void SetHealthPercentage(float healthPercentage)

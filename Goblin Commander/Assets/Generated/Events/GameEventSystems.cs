@@ -10,5 +10,6 @@ public sealed class GameEventSystems : Feature {
 
     public GameEventSystems(Contexts contexts) {
         Add(new CurrentHealthEventSystem(contexts)); // priority: 0
+        Add(new DamageEventSystem(contexts)); // priority: 0
     }
 }

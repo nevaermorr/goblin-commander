@@ -17,18 +17,19 @@ public static class GameComponentsLookup {
     public const int CurrentHealth = 6;
     public const int CurrentHealthListener = 7;
     public const int Damage = 8;
-    public const int Faction = 9;
-    public const int GameObject = 10;
-    public const int MaxHealth = 11;
-    public const int Mobility = 12;
-    public const int MoveTarget = 13;
-    public const int ObstacleType = 14;
-    public const int Position = 15;
-    public const int SightRange = 16;
-    public const int SpriteRenderer = 17;
-    public const int ToDestroy = 18;
+    public const int DamageListener = 9;
+    public const int Faction = 10;
+    public const int GameObject = 11;
+    public const int MaxHealth = 12;
+    public const int Mobility = 13;
+    public const int MoveTarget = 14;
+    public const int ObstacleType = 15;
+    public const int Position = 16;
+    public const int SightRange = 17;
+    public const int SpriteRenderer = 18;
+    public const int ToDestroy = 19;
 
-    public const int TotalComponents = 19;
+    public const int TotalComponents = 20;
 
     public static readonly string[] componentNames = {
         "Attack",
@@ -40,6 +41,7 @@ public static class GameComponentsLookup {
         "CurrentHealth",
         "CurrentHealthListener",
         "Damage",
+        "DamageListener",
         "Faction",
         "GameObject",
         "MaxHealth",
@@ -62,6 +64,7 @@ public static class GameComponentsLookup {
         typeof(CurrentHealthComponent),
         typeof(CurrentHealthListenerComponent),
         typeof(DamageComponent),
+        typeof(DamageListenerComponent),
         typeof(FactionComponent),
         typeof(GameObjectComponent),
         typeof(MaxHealthComponent),
