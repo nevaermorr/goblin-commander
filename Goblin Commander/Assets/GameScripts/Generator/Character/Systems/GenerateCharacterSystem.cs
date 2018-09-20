@@ -13,7 +13,7 @@ public class GenerateCharacterSystem : IInitializeSystem
     public void Initialize()
     {
         CreateTestPlayerAt(new Vector2(1, 1));
-        CreateTestEnemyAt(new Vector2(5, 5));
+        CreateTestEnemyAt(new Vector2(5, 2));
     }
 
     private void CreateTestPlayerAt(Vector2 position)
@@ -26,7 +26,7 @@ public class GenerateCharacterSystem : IInitializeSystem
     {
         GameEntity testCharacter = CreateTestCharacter(Faction.Enemy);
         testCharacter.ReplacePosition(position);
-        testCharacter.ReplaceAttack(0.1f, 0.5f, 0.2f);
+        testCharacter.ReplaceAttack(0.1f, 0.5f, 1f);
     }
 
     private GameEntity CreateTestCharacter(Faction faction)
@@ -37,7 +37,7 @@ public class GenerateCharacterSystem : IInitializeSystem
         testCharacter.AddPosition(Vector2.zero);
         testCharacter.AddFaction(faction);
         testCharacter.AddSightRange(1f);
-        testCharacter.AddAttack(0.1f, 0.5f, 0.1f);
+        testCharacter.AddAttack(0.1f, 0.5f, 0.5f);
         testCharacter.AddHealth(5f);
 
         return testCharacter;
