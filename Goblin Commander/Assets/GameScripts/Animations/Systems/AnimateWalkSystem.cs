@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using Entitas;
 using UnityEngine;
 
-public class AnimateWalk : ReactiveSystem<GameEntity>
+public class AnimateMovementSystem : ReactiveSystem<GameEntity>
 {
-    public AnimateWalk(Contexts contexts) : base(contexts.game)
+    public AnimateMovementSystem(Contexts contexts) : base(contexts.game)
     {
     }
 
