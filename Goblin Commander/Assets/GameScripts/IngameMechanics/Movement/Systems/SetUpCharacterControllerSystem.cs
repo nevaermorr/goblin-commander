@@ -2,8 +2,8 @@
 using UnityEngine;
 using Entitas;
 
-public class SetUpCharacterControllerSystem : ReactiveSystem<GameEntity> {
-
+public class SetUpCharacterControllerSystem : ReactiveSystem<GameEntity>
+{
     public SetUpCharacterControllerSystem(Contexts contexts) : base(contexts.game) { }
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)

@@ -19,18 +19,20 @@ public static class GameComponentsLookup {
     public const int CurrentHealthListener = 8;
     public const int Damage = 9;
     public const int DamageListener = 10;
-    public const int Faction = 11;
-    public const int GameObject = 12;
-    public const int MaxHealth = 13;
-    public const int Mobility = 14;
-    public const int MoveTarget = 15;
-    public const int ObstacleType = 16;
-    public const int Position = 17;
-    public const int SightRange = 18;
-    public const int SpriteRenderer = 19;
-    public const int ToDestroy = 20;
+    public const int DistanceMoved = 11;
+    public const int Faction = 12;
+    public const int GameObject = 13;
+    public const int MaxHealth = 14;
+    public const int Mobility = 15;
+    public const int MoveTarget = 16;
+    public const int Moving = 17;
+    public const int ObstacleType = 18;
+    public const int Position = 19;
+    public const int SightRange = 20;
+    public const int SpriteRenderer = 21;
+    public const int ToDestroy = 22;
 
-    public const int TotalComponents = 21;
+    public const int TotalComponents = 23;
 
     public static readonly string[] componentNames = {
         "Animator",
@@ -44,11 +46,13 @@ public static class GameComponentsLookup {
         "CurrentHealthListener",
         "Damage",
         "DamageListener",
+        "DistanceMoved",
         "Faction",
         "GameObject",
         "MaxHealth",
         "Mobility",
         "MoveTarget",
+        "Moving",
         "ObstacleType",
         "Position",
         "SightRange",
@@ -68,11 +72,13 @@ public static class GameComponentsLookup {
         typeof(CurrentHealthListenerComponent),
         typeof(DamageComponent),
         typeof(DamageListenerComponent),
+        typeof(DistanceMovedComponent),
         typeof(FactionComponent),
         typeof(GameObjectComponent),
         typeof(MaxHealthComponent),
         typeof(MobilityComponent),
         typeof(MoveTargetComponent),
+        typeof(MovingComponent),
         typeof(ObstacleTypeComponent),
         typeof(PositionComponent),
         typeof(SightRangeComponent),

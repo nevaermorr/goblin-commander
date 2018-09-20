@@ -28,7 +28,6 @@ public class AttackCurrentEnemySystem : IExecuteSystem
                 && characterEntity.attack.IsReady()
                 )
             {
-                characterEntity.CancelMovement();
                 gameContext.CreateEntity().AddDamage(
                     characterEntity.attack.Power,
                     characterEntity,

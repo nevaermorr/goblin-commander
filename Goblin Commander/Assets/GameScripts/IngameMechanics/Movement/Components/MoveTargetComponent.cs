@@ -21,9 +21,4 @@ public partial class GameEntity
             this.RemoveMoveTarget();
         }
 	}
-
-	public bool IsMoving()
-	{
-		return this.hasMoveTarget;
-	}
 }

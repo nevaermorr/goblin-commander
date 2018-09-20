@@ -17,6 +17,7 @@ public class CharacterMoveSystem : IExecuteSystem
             {
                 Move(characterEntity);
             }
+            characterEntity.isMoving = characterEntity.hasMoveTarget;
         }
     }
 

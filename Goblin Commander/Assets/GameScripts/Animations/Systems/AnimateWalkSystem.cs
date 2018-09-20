@@ -10,7 +10,7 @@ public class AnimateWalk : ReactiveSystem<GameEntity>
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return context.CreateCollector(GameMatcher.MoveTarget.AddedOrRemoved());
+        return context.CreateCollector(GameMatcher.Moving.AddedOrRemoved());
     }
 
     protected override bool Filter(GameEntity entity)
@@ -22,7 +22,7 @@ public class AnimateWalk : ReactiveSystem<GameEntity>
     {
         foreach (GameEntity animatedEntity in entities)
         {
-            if (animatedEntity.IsMoving())
+            if (animatedEntity.isMoving)
             {
                 StartWalkAnimation(animatedEntity.animator);
             }

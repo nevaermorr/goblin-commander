@@ -17,7 +17,11 @@ public class UpdatePositionSystem : IExecuteSystem
     {
         foreach (GameEntity entity in spatialEntities)
         {
-            entity.ReplacePosition(entity.gameObject.Value.transform.position);
+            Vector2 newPosition = entity.gameObject.Value.transform.position;
+
+            entity.ReplaceDistanceMoved(newPosition - entity.position);
+            entity.isMoving = (newPosition != entity.position);
+            entity.ReplacePosition(newPosition);
         }
     }
 }
