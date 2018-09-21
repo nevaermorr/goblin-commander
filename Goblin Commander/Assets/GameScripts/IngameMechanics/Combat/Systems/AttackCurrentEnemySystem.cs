@@ -22,9 +22,7 @@ public class AttackCurrentEnemySystem : IExecuteSystem
     {
         foreach (var characterEntity in charactersGroup.GetEntities())
         {
-            if (characterEntity.currentEnemy.Value.position.IsInRangeOf(
-                    characterEntity.position,
-                    characterEntity.attack.Range)
+            if (characterEntity.HasCurrentEnemyInRange()
                 && characterEntity.attack.IsReady()
                 )
             {

@@ -18,7 +18,8 @@ public class FollowEnemySystem : IExecuteSystem
         foreach(var enemyFollower in enemyFollowers)
         {
             if (enemyFollower.hasCurrentEnemy
-                && enemyFollower.currentEnemy.Value.hasPosition)
+                && enemyFollower.currentEnemy.Value.hasPosition
+                && !enemyFollower.HasCurrentEnemyInRange())
             {
                 enemyFollower.ReplaceMoveTarget(enemyFollower.currentEnemy.Value.position);
             }

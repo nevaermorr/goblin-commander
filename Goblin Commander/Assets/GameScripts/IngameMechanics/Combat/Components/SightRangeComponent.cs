@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Entitas;
 
+[Game]
 public class SightRangeComponent : IComponent
 {
     public float Value;
