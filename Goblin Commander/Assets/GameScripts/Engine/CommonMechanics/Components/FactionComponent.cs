@@ -46,6 +46,14 @@ public partial class GameEntity
         return this.hasFaction && this.faction == faction;
     }
 
+    public bool BelongsToFactionOf(GameEntity entity)
+    {
+        return (
+            !entity.hasFaction
+            || BelongsToFaction(entity.faction)
+        );
+    }
+
     public bool IsHostileTowards(GameEntity entity)
     {
         return this.hasFaction

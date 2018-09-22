@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections.Generic;
 using Entitas;
 
@@ -21,8 +22,26 @@ public class SummonCharacterToBeaconSystem : ReactiveSystem<GameEntity>
     {
         foreach (var beaconEntity in beaconEntities)
         {
-            beaconEntity.beacon.SummonCharactersInRange();
+            SummonCharactersInRange(beaconEntity);
             beaconEntity.isToDestroy = true;
         }
+    }
+
+    private void SummonCharactersInRange(GameEntity beaconEntity)
+    {
+        foreach (GameEntity characterEntity in GetMobileCharacterEntitiesInRange(beaconEntity))
+        {
+            if (!beaconEntity.BelongsToFactionOf(characterEntity))
+            {
+                continue;
+            }
+            characterEntity.ReplaceMoveTarget(beaconEntity.position);
+        }
+    }
+    
+    public static GameEntity[] GetMobileCharacterEntitiesInRange(GameEntity beaconEntity)
+    {
+        return MovementService.GetAllMobileCharacterEntities()
+        .Where(entity => entity.position.IsInRangeOf(beaconEntity.position, beaconEntity.beacon.Range)).ToArray();
     }
 }

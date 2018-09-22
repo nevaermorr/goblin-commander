@@ -22,19 +22,20 @@ public static class GameComponentsLookup {
     public const int DistanceMoved = 11;
     public const int Faction = 12;
     public const int GameObject = 13;
-    public const int MaxHealth = 14;
-    public const int Mobility = 15;
-    public const int MoveTarget = 16;
-    public const int Moving = 17;
-    public const int ObstacleType = 18;
-    public const int Orientation = 19;
-    public const int OrientationSettings = 20;
-    public const int Position = 21;
-    public const int SightRange = 22;
-    public const int SpriteRenderer = 23;
-    public const int ToDestroy = 24;
+    public const int GameState = 14;
+    public const int MaxHealth = 15;
+    public const int Mobility = 16;
+    public const int MoveTarget = 17;
+    public const int Moving = 18;
+    public const int ObstacleType = 19;
+    public const int Orientation = 20;
+    public const int OrientationSettings = 21;
+    public const int Position = 22;
+    public const int SightRange = 23;
+    public const int SpriteRenderer = 24;
+    public const int ToDestroy = 25;
 
-    public const int TotalComponents = 25;
+    public const int TotalComponents = 26;
 
     public static readonly string[] componentNames = {
         "Animator",
@@ -51,6 +52,7 @@ public static class GameComponentsLookup {
         "DistanceMoved",
         "Faction",
         "GameObject",
+        "GameState",
         "MaxHealth",
         "Mobility",
         "MoveTarget",
@@ -79,6 +81,7 @@ public static class GameComponentsLookup {
         typeof(DistanceMovedComponent),
         typeof(FactionComponent),
         typeof(GameObjectComponent),
+        typeof(GameStateComponent),
         typeof(MaxHealthComponent),
         typeof(MobilityComponent),
         typeof(MoveTargetComponent),
