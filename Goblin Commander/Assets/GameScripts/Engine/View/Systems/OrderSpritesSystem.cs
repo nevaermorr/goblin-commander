@@ -13,14 +13,14 @@ public class OrderSpritesSystem : IExecuteSystem
     {
         foreach (var spriteEntity in spriteEntities.GetEntities())
         {
-            SetSpriteOrder(spriteEntity.spriteRenderer);
+            SetSpriteOrder(spriteEntity);
         }
     }
 
-    private void SetSpriteOrder(SpriteRenderer spriteRenderer)
+    private void SetSpriteOrder(GameEntity spriteOwner)
     {
-        spriteRenderer.sortingOrder = GetSpriteOrderForScreenPosition(
-            Camera.main.WorldToScreenPoint(spriteRenderer.transform.position));
+        spriteOwner.spriteRenderer.Value.sortingOrder = GetSpriteOrderForScreenPosition(
+            Camera.main.WorldToScreenPoint(spriteOwner.position));
     }
 
     private int GetSpriteOrderForScreenPosition(Vector3 position)
@@ -29,7 +29,7 @@ public class OrderSpritesSystem : IExecuteSystem
             SpriteOrderingService.PixelCountToMaxShortModifier
             * (((position.y - 1) * Screen.width)
                 + position.x));
-        
+
         return order;
     }
 }
