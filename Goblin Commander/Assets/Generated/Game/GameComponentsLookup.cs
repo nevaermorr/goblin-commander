@@ -10,8 +10,8 @@ public static class GameComponentsLookup {
 
     public const int Animator = 0;
     public const int Attack = 1;
-    public const int Beacon = 2;
-    public const int BeaconSettings = 3;
+    public const int BeaconAction = 2;
+    public const int Beacon = 3;
     public const int CharacterController = 4;
     public const int CharacterType = 5;
     public const int Cooldown = 6;
@@ -32,17 +32,19 @@ public static class GameComponentsLookup {
     public const int Orientation = 21;
     public const int OrientationSettings = 22;
     public const int Position = 23;
-    public const int SightRange = 24;
-    public const int SpriteRenderer = 25;
-    public const int ToDestroy = 26;
+    public const int Request = 24;
+    public const int SightRange = 25;
+    public const int SpriteRenderer = 26;
+    public const int SwitchBeaconActionRequest = 27;
+    public const int ToDestroy = 28;
 
-    public const int TotalComponents = 27;
+    public const int TotalComponents = 29;
 
     public static readonly string[] componentNames = {
         "Animator",
         "Attack",
+        "BeaconAction",
         "Beacon",
-        "BeaconSettings",
         "CharacterController",
         "CharacterType",
         "Cooldown",
@@ -63,16 +65,18 @@ public static class GameComponentsLookup {
         "Orientation",
         "OrientationSettings",
         "Position",
+        "Request",
         "SightRange",
         "SpriteRenderer",
+        "SwitchBeaconActionRequest",
         "ToDestroy"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(AnimatorComponent),
         typeof(AttackComponent),
+        typeof(BeaconActionComponent),
         typeof(BeaconComponent),
-        typeof(BeaconSettingsComponent),
         typeof(CharacterControllerComponent),
         typeof(CharacterTypeComponent),
         typeof(CooldownComponent),
@@ -93,8 +97,10 @@ public static class GameComponentsLookup {
         typeof(OrientationComponent),
         typeof(OrientationSettingsComponent),
         typeof(PositionComponent),
+        typeof(RequestComponent),
         typeof(SightRangeComponent),
         typeof(SpriteRendererComponent),
+        typeof(SwitchBeaconActionRequest),
         typeof(ToDestroyComponent)
     };
 }

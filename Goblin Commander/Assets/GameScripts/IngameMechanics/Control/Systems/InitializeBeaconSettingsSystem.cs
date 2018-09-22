@@ -13,6 +13,6 @@ public class InitializeBeaconSettingsSystem : IInitializeSystem
 
     public void Initialize()
     {
-        gameContext.gameStateEntity.AddBeaconSettings(INIT_BEACON_ACTION);
+        gameContext.gameStateEntity.AddBeaconAction(INIT_BEACON_ACTION);
     }
 }

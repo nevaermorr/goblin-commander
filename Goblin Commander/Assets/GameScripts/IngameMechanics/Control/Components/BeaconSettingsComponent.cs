@@ -1,7 +1,7 @@
 using Entitas;
 
 [Game]
-public class BeaconSettingsComponent : IComponent
+public class BeaconActionComponent : IComponent
 {
-    public BeaconAction CurrentAction;
+    public BeaconAction Value;
 }
