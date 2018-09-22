@@ -15,7 +15,8 @@ public class SummonCharacterToBeaconSystem : ReactiveSystem<GameEntity>
 
     protected override bool Filter(GameEntity beaconEntity)
     {
-        return beaconEntity.hasBeacon;
+        return beaconEntity.hasBeacon
+            && beaconEntity.beacon.Action == BeaconAction.Summon;
     }
 
     protected override void Execute(List<GameEntity> beaconEntities)

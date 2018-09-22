@@ -11,36 +11,38 @@ public static class GameComponentsLookup {
     public const int Animator = 0;
     public const int Attack = 1;
     public const int Beacon = 2;
-    public const int CharacterController = 3;
-    public const int CharacterType = 4;
-    public const int Cooldown = 5;
-    public const int CurrentEnemy = 6;
-    public const int CurrentHealth = 7;
-    public const int CurrentHealthListener = 8;
-    public const int Damage = 9;
-    public const int DamageListener = 10;
-    public const int DistanceMoved = 11;
-    public const int Faction = 12;
-    public const int GameObject = 13;
-    public const int GameState = 14;
-    public const int MaxHealth = 15;
-    public const int Mobility = 16;
-    public const int MoveTarget = 17;
-    public const int Moving = 18;
-    public const int ObstacleType = 19;
-    public const int Orientation = 20;
-    public const int OrientationSettings = 21;
-    public const int Position = 22;
-    public const int SightRange = 23;
-    public const int SpriteRenderer = 24;
-    public const int ToDestroy = 25;
+    public const int BeaconSettings = 3;
+    public const int CharacterController = 4;
+    public const int CharacterType = 5;
+    public const int Cooldown = 6;
+    public const int CurrentEnemy = 7;
+    public const int CurrentHealth = 8;
+    public const int CurrentHealthListener = 9;
+    public const int Damage = 10;
+    public const int DamageListener = 11;
+    public const int DistanceMoved = 12;
+    public const int Faction = 13;
+    public const int GameObject = 14;
+    public const int GameState = 15;
+    public const int MaxHealth = 16;
+    public const int Mobility = 17;
+    public const int MoveTarget = 18;
+    public const int Moving = 19;
+    public const int ObstacleType = 20;
+    public const int Orientation = 21;
+    public const int OrientationSettings = 22;
+    public const int Position = 23;
+    public const int SightRange = 24;
+    public const int SpriteRenderer = 25;
+    public const int ToDestroy = 26;
 
-    public const int TotalComponents = 26;
+    public const int TotalComponents = 27;
 
     public static readonly string[] componentNames = {
         "Animator",
         "Attack",
         "Beacon",
+        "BeaconSettings",
         "CharacterController",
         "CharacterType",
         "Cooldown",
@@ -70,6 +72,7 @@ public static class GameComponentsLookup {
         typeof(AnimatorComponent),
         typeof(AttackComponent),
         typeof(BeaconComponent),
+        typeof(BeaconSettingsComponent),
         typeof(CharacterControllerComponent),
         typeof(CharacterTypeComponent),
         typeof(CooldownComponent),
