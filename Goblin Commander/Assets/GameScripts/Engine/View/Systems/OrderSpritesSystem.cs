@@ -7,7 +7,7 @@ public class OrderSpritesSystem : IExecuteSystem
     private IGroup<GameEntity> spriteEntities;
     public OrderSpritesSystem(Contexts contexts)
     {
-        spriteEntities = contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.SpriteRenderer, GameMatcher.GameObject));
+        spriteEntities = contexts.game.GetGroup(GameMatcher.SpriteRenderer);
     }
     public void Execute()
     {

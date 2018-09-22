@@ -25,10 +25,11 @@ public class SetUpAnimatorSystem : ReactiveSystem<GameEntity> {
     }
     private void ExtractAnimator(GameEntity entity)
     {
-        Animator animator = entity.gameObject.Value.GetComponent<Animator>();
-        if (animator != null)
+        AnimatorLink link = entity.gameObject.Value.GetComponent<AnimatorLink>();
+        if (link != null
+            && link.Animator != null)
         {
-            entity.AddAnimator(animator);
+            entity.AddAnimator(link.Animator);
         }
     }
 }

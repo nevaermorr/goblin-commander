@@ -25,10 +25,11 @@ public class SetUpSpriteRendererSystem : ReactiveSystem<GameEntity> {
     }
     private void ExtractSpriteRenderer(GameEntity entity)
     {
-        SpriteRenderer spriteRenderer = entity.gameObject.Value.GetComponent<SpriteRenderer>();
-        if (spriteRenderer != null)
+        SpriteRendererLink link = entity.gameObject.Value.GetComponent<SpriteRendererLink>();
+        if (link != null
+            && link.SpriteRenderer != null)
         {
-            entity.AddSpriteRenderer(spriteRenderer);
+            entity.AddSpriteRenderer(link.SpriteRenderer);
         }
     }
 }
