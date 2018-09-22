@@ -2,11 +2,9 @@
 using UnityEngine;
 using Entitas;
 
-public class OrientViewWhenMovingSystem : ReactiveSystem<GameEntity>
+public class OrientateWhenMovingSystem : ReactiveSystem<GameEntity>
 {
-    private Vector3 ORIENTATION_RIGHT = new Vector3(-1, 1, 1);
-    private Vector3 ORIENTATION_LEFT = new Vector3(1, 1, 1);
-    public OrientViewWhenMovingSystem(Contexts contexts) : base(contexts.game) { }
+    public OrientateWhenMovingSystem(Contexts contexts) : base(contexts.game) { }
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
@@ -22,10 +20,10 @@ public class OrientViewWhenMovingSystem : ReactiveSystem<GameEntity>
     {
         foreach (GameEntity movingEntity in entities)
         {
-            Vector3 orientation = movingEntity.distanceMoved.Value.x >= 0
-            ? ORIENTATION_RIGHT : ORIENTATION_LEFT;
+            OriginalOrientation orientation = movingEntity.distanceMoved.Value.x >= 0
+            ? OriginalOrientation.Right : OriginalOrientation.Left;
 
-            movingEntity.gameObject.Value.transform.localScale = orientation;
+            movingEntity.ReplaceOrientation(orientation);
         }
     }
 }

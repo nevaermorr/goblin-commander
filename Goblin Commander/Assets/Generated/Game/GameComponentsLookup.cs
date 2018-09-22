@@ -27,12 +27,14 @@ public static class GameComponentsLookup {
     public const int MoveTarget = 16;
     public const int Moving = 17;
     public const int ObstacleType = 18;
-    public const int Position = 19;
-    public const int SightRange = 20;
-    public const int SpriteRenderer = 21;
-    public const int ToDestroy = 22;
+    public const int Orientation = 19;
+    public const int OrientationSettings = 20;
+    public const int Position = 21;
+    public const int SightRange = 22;
+    public const int SpriteRenderer = 23;
+    public const int ToDestroy = 24;
 
-    public const int TotalComponents = 23;
+    public const int TotalComponents = 25;
 
     public static readonly string[] componentNames = {
         "Animator",
@@ -54,6 +56,8 @@ public static class GameComponentsLookup {
         "MoveTarget",
         "Moving",
         "ObstacleType",
+        "Orientation",
+        "OrientationSettings",
         "Position",
         "SightRange",
         "SpriteRenderer",
@@ -80,6 +84,8 @@ public static class GameComponentsLookup {
         typeof(MoveTargetComponent),
         typeof(MovingComponent),
         typeof(ObstacleTypeComponent),
+        typeof(OrientationComponent),
+        typeof(OrientationSettingsComponent),
         typeof(PositionComponent),
         typeof(SightRangeComponent),
         typeof(SpriteRendererComponent),

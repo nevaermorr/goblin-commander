@@ -7,7 +7,7 @@ public class MovementFeature : Feature
         Add(new SetUpCharacterControllerSystem(contexts));
         Add(new CharacterMoveSystem(contexts));
         Add(new UpdatePositionSystem(contexts));
-        Add(new OrientViewWhenMovingSystem(contexts));
+        Add(new OrientateWhenMovingSystem(contexts));
         Add(new CancelMovementWhenStuckSystem(contexts));
         Add(new CancelMovementWhenAttackingSystem(contexts));
     }

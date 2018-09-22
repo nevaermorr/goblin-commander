@@ -7,5 +7,6 @@ public class CombatFeature : Feature
         Add(new ChooseEnemySystem(contexts));
         Add(new FollowEnemySystem(contexts));
         Add(new AttackCurrentEnemySystem(contexts));
+        Add(new OrientateWhenFightingSystem(contexts));
     }
 }
