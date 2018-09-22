@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 784208051}
   - component: {fileID: 784208050}
   - component: {fileID: 784208049}
+  - component: {fileID: 784208052}
   m_Layer: 5
   m_Name: FleeButton
   m_TagString: Untagged
@@ -406,6 +407,17 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 784208047}
   m_CullTransparentMesh: 0
+--- !u!114 &784208052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 784208047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef6d541b174c7424abbe518e92d14bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &916172082
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,7 +570,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1588433259}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 328d53c985a820b4192ec11b44547c65, type: 3}
+  m_Script: {fileID: 11500000, guid: b9e604313ee304646a1036eda3dc699b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Action: 0
@@ -573,6 +585,7 @@ GameObject:
   - component: {fileID: 1761534958}
   - component: {fileID: 1761534957}
   - component: {fileID: 1761534956}
+  - component: {fileID: 1761534959}
   m_Layer: 5
   m_Name: SummonButton
   m_TagString: Untagged
@@ -686,6 +699,17 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1761534954}
   m_CullTransparentMesh: 0
+--- !u!114 &1761534959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1761534954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef6d541b174c7424abbe518e92d14bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1763690159
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,7 +752,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1763690159}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 328d53c985a820b4192ec11b44547c65, type: 3}
+  m_Script: {fileID: 11500000, guid: b9e604313ee304646a1036eda3dc699b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Action: 1

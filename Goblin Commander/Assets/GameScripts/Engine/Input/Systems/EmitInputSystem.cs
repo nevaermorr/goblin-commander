@@ -2,12 +2,16 @@
 using Entitas;
 
 public class EmitInputSystem : IInitializeSystem, IExecuteSystem {
-	private readonly InputContext context;
+
+    private const int LEFT_MOUSE_BUTTON_INDEX = 0;
+    private const int RIGHT_MOUSE_BUTTON_INDEX = 1;
+
+	private readonly InputContext inputContext;
     private InputEntity leftMouseEntity;
     private InputEntity rightMouseEntity;
 
     public EmitInputSystem(Contexts contexts) {
-        context = contexts.input;
+        inputContext = contexts.input;
     }
 
     public void Initialize()
@@ -18,30 +22,34 @@ public class EmitInputSystem : IInitializeSystem, IExecuteSystem {
 
     private void InitLeftMouse()
     {
-        context.isMouseLeft = true;
-        leftMouseEntity = context.mouseLeftEntity;
+        inputContext.isMouseLeft = true;
+        leftMouseEntity = inputContext.mouseLeftEntity;
     }
 
     private void InitRightMouse()
     {
-        context.isMouseRight = true;
-        rightMouseEntity = context.mouseRightEntity;
+        inputContext.isMouseRight = true;
+        rightMouseEntity = inputContext.mouseRightEntity;
     }
 
     public void Execute()
     {
+        if (inputContext.inputStateEntity.isIgnoreInput)
+        {
+            return;
+        }
         SetLeftMouseState();
         SetRightMouseState();
     }
 
     private void SetLeftMouseState()
     {
-        SetMouseState(leftMouseEntity, 0);
+        SetMouseState(leftMouseEntity, LEFT_MOUSE_BUTTON_INDEX);
     }
 
     private void SetRightMouseState()
     {
-        SetMouseState(rightMouseEntity, 1);
+        SetMouseState(rightMouseEntity, RIGHT_MOUSE_BUTTON_INDEX);
     }
 
     private void SetMouseState(InputEntity mouseButtonEntity, int mouseButtonIndex)

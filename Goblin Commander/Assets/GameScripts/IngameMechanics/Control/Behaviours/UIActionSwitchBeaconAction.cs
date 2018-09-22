@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwitchBeaconAction : MonoBehaviour {
+public class UIActionSwitchBeaconAction : MonoBehaviour {
 
 	[SerializeField]
 	BeaconAction Action;
