@@ -50,6 +50,6 @@ public partial class GameEntity
     {
         return this.hasFaction
             && entity.hasFaction
-            && this.faction != entity.faction;
+            && this.faction.Value != entity.faction.Value;
     }
 }

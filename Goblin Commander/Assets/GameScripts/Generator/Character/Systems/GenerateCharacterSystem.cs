@@ -12,7 +12,8 @@ public class GenerateCharacterSystem : IInitializeSystem
 
     public void Initialize()
     {
-        CreateTestPlayerAt(new Vector2(1, 1));
+        CreateTestPlayerAt(new Vector2(1, 1)); 
+        CreateTestPlayerAt(new Vector2(1, 2)); 
         CreateTestEnemyAt(new Vector2(5, 2));
     }
 
