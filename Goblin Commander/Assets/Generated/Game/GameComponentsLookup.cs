@@ -17,30 +17,33 @@ public static class GameComponentsLookup {
     public const int CharacterType = 6;
     public const int Cooldown = 7;
     public const int CurrentEnemy = 8;
-    public const int CurrentHealth = 9;
-    public const int CurrentHealthListener = 10;
-    public const int Damage = 11;
-    public const int DamageListener = 12;
-    public const int DistanceMoved = 13;
-    public const int Faction = 14;
-    public const int GameObject = 15;
-    public const int GameState = 16;
-    public const int MaxHealth = 17;
-    public const int Mobility = 18;
-    public const int MoveTarget = 19;
-    public const int Moving = 20;
-    public const int ObstacleType = 21;
-    public const int Orientation = 22;
-    public const int OrientationSettings = 23;
-    public const int Position = 24;
-    public const int Request = 25;
-    public const int Scared = 26;
-    public const int SightRange = 27;
-    public const int SpriteRenderer = 28;
-    public const int SwitchBeaconActionRequest = 29;
-    public const int ToDestroy = 30;
+    public const int CurrentEnergy = 9;
+    public const int CurrentEnergyListener = 10;
+    public const int CurrentHealth = 11;
+    public const int CurrentHealthListener = 12;
+    public const int Damage = 13;
+    public const int DamageListener = 14;
+    public const int DistanceMoved = 15;
+    public const int Faction = 16;
+    public const int GameObject = 17;
+    public const int GameState = 18;
+    public const int MaxEnergy = 19;
+    public const int MaxHealth = 20;
+    public const int Mobility = 21;
+    public const int MoveTarget = 22;
+    public const int Moving = 23;
+    public const int ObstacleType = 24;
+    public const int Orientation = 25;
+    public const int OrientationSettings = 26;
+    public const int Position = 27;
+    public const int Request = 28;
+    public const int Scared = 29;
+    public const int SightRange = 30;
+    public const int SpriteRenderer = 31;
+    public const int SwitchBeaconActionRequest = 32;
+    public const int ToDestroy = 33;
 
-    public const int TotalComponents = 31;
+    public const int TotalComponents = 34;
 
     public static readonly string[] componentNames = {
         "Animator",
@@ -52,6 +55,8 @@ public static class GameComponentsLookup {
         "CharacterType",
         "Cooldown",
         "CurrentEnemy",
+        "CurrentEnergy",
+        "CurrentEnergyListener",
         "CurrentHealth",
         "CurrentHealthListener",
         "Damage",
@@ -60,6 +65,7 @@ public static class GameComponentsLookup {
         "Faction",
         "GameObject",
         "GameState",
+        "MaxEnergy",
         "MaxHealth",
         "Mobility",
         "MoveTarget",
@@ -86,6 +92,8 @@ public static class GameComponentsLookup {
         typeof(CharacterTypeComponent),
         typeof(CooldownComponent),
         typeof(CurrentEnemyComponent),
+        typeof(CurrentEnergyComponent),
+        typeof(CurrentEnergyListenerComponent),
         typeof(CurrentHealthComponent),
         typeof(CurrentHealthListenerComponent),
         typeof(DamageComponent),
@@ -94,6 +102,7 @@ public static class GameComponentsLookup {
         typeof(FactionComponent),
         typeof(GameObjectComponent),
         typeof(GameStateComponent),
+        typeof(MaxEnergyComponent),
         typeof(MaxHealthComponent),
         typeof(MobilityComponent),
         typeof(MoveTargetComponent),
