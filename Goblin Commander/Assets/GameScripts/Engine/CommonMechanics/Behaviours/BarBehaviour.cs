@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Entitas.Unity;
+using UnityEngine.UI;
 
 public abstract class BarBehaviour : MonoBehaviour
 {
     [SerializeField]
     private GameObject owner;
     [SerializeField]
-	private SpriteRenderer[] cells;
+	private GameObject[] cells;
+	private SpriteRenderer[] cellsSprites;
+	private Image[] cellsImages;
 
     private GameEntity listenerEntity;
 	protected Color[] cellColorGradient;
@@ -17,7 +20,42 @@ public abstract class BarBehaviour : MonoBehaviour
     private void Awake()
     {
         cellColorGradient = GetCellColorGradient();
-        gradientSingleCellPercentage = (float)1 / (cells.Length * cellColorGradient.Length - 1);
+        gradientSingleCellPercentage = 1f / (cells.Length * cellColorGradient.Length - 1);
+        InitCells();
+    }
+
+    private void InitCells()
+    {
+        if (cells.Length == 0)
+        {
+            return;
+        }
+        SpriteRenderer sprite = cells[0].GetComponent<SpriteRenderer>();
+        if (sprite != null)
+        {
+            InitCellsSprites();
+        }
+        else
+        {
+            InitCellsImages();
+        }
+    }
+
+    private void InitCellsSprites()
+    {
+        cellsSprites = new SpriteRenderer[cells.Length];
+        for (int i = 0; i < cells.Length; i++)
+        {
+            cellsSprites[i] = cells[i].GetComponent<SpriteRenderer>();
+        }
+    }
+    private void InitCellsImages()
+    {
+        cellsImages = new Image[cells.Length];
+        for (int i = 0; i < cells.Length; i++)
+        {
+            cellsImages[i] = cells[i].GetComponent<Image>();
+        }
     }
     
     protected abstract Color[] GetCellColorGradient();
@@ -50,7 +88,8 @@ public abstract class BarBehaviour : MonoBehaviour
 
     protected void OnParameterChanged(GameEntity entity, float currentParameterValue)
     {
-        if (entity != owner.GetEntityLink().entity)
+        if (owner != null
+            && entity != owner.GetEntityLink().entity)
         {
             return;
         }
@@ -76,20 +115,32 @@ public abstract class BarBehaviour : MonoBehaviour
             {
                 cells[i].gameObject.SetActive(true);
                 float parameterLeftInCellPercentage = parameterPercentage - currentCellPercentage;
-                SetBarCellColor(cells[i], parameterLeftInCellPercentage);
+                SetBarCellColor(i, parameterLeftInCellPercentage);
             }
         }
 	}
 
-    private void SetBarCellColor(SpriteRenderer cell, float parameterLeftInCellPercentage)
+    private void SetBarCellColor(int cellIndex, float parameterLeftInCellPercentage)
     {
         for (int i = cellColorGradient.Length - 1; i >= 0; i--)
         {
             if (i * gradientSingleCellPercentage <= parameterLeftInCellPercentage)
             {
-                cell.color = cellColorGradient[i];
+                SetCellColorForProperComponent(cellIndex, cellColorGradient[i]);
                 break;
             }
+        }
+    }
+
+    private void SetCellColorForProperComponent(int cellIndex, Color color)
+    {
+        if (cellsSprites != null)
+        {
+            cellsSprites[cellIndex].color = color;
+        }
+        else if (cellsImages != null)
+        {
+            cellsImages[cellIndex].color = color;
         }
     }
 }

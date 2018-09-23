@@ -2,7 +2,7 @@ using UnityEngine;
 
 public static class ObstaclePrefabService
 {
-    private const string CHARACTERS_PREFABS_DIRECTORY_PATH = "Prefabs/Obstacles/";
+    private const string CHARACTERS_PREFABS_DIRECTORY_PATH = "Obstacles/";
 
     public static GameObject GetPrefabForType(ObstacleType obstacleType)
     {

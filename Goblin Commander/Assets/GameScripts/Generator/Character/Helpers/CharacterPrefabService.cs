@@ -2,7 +2,7 @@ using UnityEngine;
 
 public static class CharacterPrefabService
 {
-    private const string CHARACTERS_PREFABS_DIRECTORY_PATH = "Prefabs/Characters/";
+    private const string CHARACTERS_PREFABS_DIRECTORY_PATH = "Characters/";
 
     public static GameObject GetPrefabForType(CharacterType characterType)
     {

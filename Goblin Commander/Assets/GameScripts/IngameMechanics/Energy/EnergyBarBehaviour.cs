@@ -1,31 +1,31 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-public class HealthbarBehaviour : BarBehaviour, ICurrentHealthListener
+public class EnergyBarBehaviour : BarBehaviour, ICurrentEnergyListener
 {
 
     protected override Color[] GetCellColorGradient()
     {
         Color[] cellColorGradient = {
-            Color.red,
-            Color.yellow,
-            Color.green
+            Color.white,
+            Color.cyan,
+            Color.blue
         };
         return cellColorGradient;
     }
 
     protected override GameEntity AttachListenerComponent(GameEntity listenerEntity)
     {
-        listenerEntity.AddCurrentHealthListener(this);
+        listenerEntity.AddCurrentEnergyListener(this);
         return listenerEntity;
     }
 
-    public void OnCurrentHealth(GameEntity entity, float currentHealth)
+    public void OnCurrentEnergy(GameEntity entity, float currentEnergy)
     {
-        OnParameterChanged(entity, currentHealth);
+        OnParameterChanged(entity, currentEnergy);
     }
 
     protected override float GetParameterMaxValue(GameEntity entity)
     {
-        return entity.maxHealth;
+        return entity.maxEnergy;
     }
 }

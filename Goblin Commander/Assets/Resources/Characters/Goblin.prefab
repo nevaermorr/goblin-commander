@@ -365,11 +365,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: {fileID: 1518434822581678}
   cells:
-  - {fileID: 212632595336585588}
-  - {fileID: 212115227622350732}
-  - {fileID: 212192833538950180}
-  - {fileID: 212948664716958050}
-  - {fileID: 212244409390300196}
+  - {fileID: 1265162558378798}
+  - {fileID: 1761694882924226}
+  - {fileID: 1389114144646990}
+  - {fileID: 1428923604255428}
+  - {fileID: 1613448352357970}
 --- !u!143 &143074773808242036
 CharacterController:
   m_ObjectHideFlags: 1
