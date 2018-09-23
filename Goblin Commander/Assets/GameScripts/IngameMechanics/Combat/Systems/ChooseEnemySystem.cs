@@ -15,7 +15,8 @@ public class ChooseEnemySystem : IExecuteSystem
                 GameMatcher.SightRange,
                 GameMatcher.Faction
             ).NoneOf(
-                GameMatcher.CurrentEnemy
+                GameMatcher.CurrentEnemy,
+                GameMatcher.Scared
             )
         );
     }

@@ -1,5 +1,5 @@
 public enum BeaconAction
 {
-    Summon,
-    Flee,
+    Summon = 0,
+    Scare = 1,
 }

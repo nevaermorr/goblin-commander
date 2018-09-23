@@ -14,5 +14,6 @@ public class InitializeBeaconSettingsSystem : IInitializeSystem
     public void Initialize()
     {
         gameContext.gameStateEntity.AddBeaconAction(INIT_BEACON_ACTION);
+        gameContext.gameStateEntity.AddBeaconRange(BeaconService.GetDefaultRangeForAction(INIT_BEACON_ACTION));
     }
 }

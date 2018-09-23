@@ -2,9 +2,9 @@ using System.Linq;
 using System.Collections.Generic;
 using Entitas;
 
-public class SummonCharacterToBeaconSystem : ReactiveSystem<GameEntity>
+public class BeaconSummonSystem : ReactiveSystem<GameEntity>
 {
-    public SummonCharacterToBeaconSystem(Contexts contexts) : base(contexts.game) {}
+    public BeaconSummonSystem(Contexts contexts) : base(contexts.game) {}
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
@@ -28,7 +28,8 @@ public class SummonCharacterToBeaconSystem : ReactiveSystem<GameEntity>
 
     private void SummonCharactersInRange(GameEntity beaconEntity)
     {
-        foreach (GameEntity characterEntity in GetMobileCharacterEntitiesInRange(beaconEntity))
+        foreach (GameEntity characterEntity
+            in BeaconService.GetMobileCharacterEntitiesInRange(beaconEntity))
         {
             if (!beaconEntity.BelongsToFactionOf(characterEntity))
             {
@@ -36,11 +37,5 @@ public class SummonCharacterToBeaconSystem : ReactiveSystem<GameEntity>
             }
             characterEntity.ReplaceMoveTarget(beaconEntity.position);
         }
-    }
-    
-    public static GameEntity[] GetMobileCharacterEntitiesInRange(GameEntity beaconEntity)
-    {
-        return MovementService.GetAllMobileCharacterEntities()
-        .Where(entity => entity.position.IsInRangeOf(beaconEntity.position, beaconEntity.beacon.Range)).ToArray();
     }
 }

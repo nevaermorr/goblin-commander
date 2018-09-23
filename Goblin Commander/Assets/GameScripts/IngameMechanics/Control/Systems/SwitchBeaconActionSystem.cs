@@ -24,8 +24,11 @@ public class SwitchBeaconActionSystem : ReactiveSystem<GameEntity>
     {
         foreach (var requestEntity in requestEntities)
         {
-            gameContext.gameStateEntity.ReplaceBeaconAction(
-                requestEntity.switchBeaconActionRequest.NewBeaconAction);
+            BeaconAction newAction = requestEntity.switchBeaconActionRequest.NewBeaconAction;
+            gameContext.gameStateEntity.ReplaceBeaconAction(newAction);
+            gameContext.gameStateEntity.ReplaceBeaconRange(
+                BeaconService.GetDefaultRangeForAction(newAction)
+            );
         }
     }
 }
