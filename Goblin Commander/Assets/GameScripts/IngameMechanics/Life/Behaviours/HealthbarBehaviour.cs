@@ -1,89 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Entitas.Unity;
+﻿using UnityEngine;
 
-public class HealthbarBehaviour : MonoBehaviour, ICurrentHealthListener {
+public class HealthbarBehaviour : BarBehaviour, ICurrentHealthListener
+{
 
-	private Color[] cellGradient = {
-		Color.red,
-		Color.yellow,
-		Color.green
-	};
-
-    [SerializeField]
-    private GameObject owner;
-    [SerializeField]
-	private SpriteRenderer[] cells;
-
-	private GameEntity healthListener;
-    private float cellGradientHealthPercentage;
-
-    private void Awake()
+    protected override Color[] GetCellColorGradient()
     {
-        cellGradientHealthPercentage = (float)1 / (cells.Length * cellGradient.Length - 1);
+        Color[] cellColorGradient = {
+            Color.red,
+            Color.yellow,
+            Color.green
+        };
+        return cellColorGradient;
     }
 
-    private void OnEnable()
-	{
-		Bind();
-	}
-	private void OnDisable()
-	{
-		Unbind();
-	}
-
-	private void Bind()
-	{
-		healthListener = Contexts.sharedInstance.game.CreateEntity();
-		healthListener.AddCurrentHealthListener(this);
-	}
-
-	private void Unbind()
-	{
-		healthListener.Destroy();
-	}
+    protected override GameEntity AttachListenerComponent(GameEntity listenerEntity)
+    {
+        listenerEntity.AddCurrentHealthListener(this);
+        return listenerEntity;
+    }
 
     public void OnCurrentHealth(GameEntity entity, float currentHealth)
     {
-        if (entity != owner.GetEntityLink().entity)
-        {
-            return;
-        }
-
-        float healthPercentage = currentHealth / entity.maxHealth;
-		SetHealthPercentage(healthPercentage);
+        OnParameterChanged(entity, currentHealth);
     }
 
-	public void SetHealthPercentage(float healthPercentage)
-	{
-		float currentCellPercentage;
 
-		for (int i = 0; i < cells.Length; i++)
-		{
-            currentCellPercentage = (float)i / cells.Length;
-            if (currentCellPercentage >= healthPercentage)
-			{
-				cells[i].gameObject.SetActive(false);
-			}
-            else
-            {
-                cells[i].gameObject.SetActive(true);
-                float healthLeftInCellPercentage = healthPercentage - currentCellPercentage;
-                SetBarCellColor(cells[i], healthLeftInCellPercentage);
-            }
-        }
-	}
-
-    private void SetBarCellColor(SpriteRenderer cell, float healthLeftInCellPercentage)
+    protected override float GetParameterMaxValue(GameEntity entity)
     {
-        for (int i = cellGradient.Length - 1; i >= 0; i--)
-        {
-            if (i * cellGradientHealthPercentage <= healthLeftInCellPercentage)
-            {
-                cell.color = cellGradient[i];
-                break;
-            }
-        }
+        return entity.maxHealth;
     }
 }
