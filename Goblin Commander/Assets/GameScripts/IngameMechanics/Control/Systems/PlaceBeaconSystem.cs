@@ -26,12 +26,21 @@ public class PlaceBeaconSystem : ReactiveSystem<InputEntity>
     {
         foreach (InputEntity entity in entities)
         {
-            GameEntity beaconEntity = gameContext.CreateEntity();
-            beaconEntity.AddPosition(entity.position);
+            RequestsService.CreateRequestEntity()
+                .AddEnergyRequireingRequest(
+                    () => CreateBeacon(entity),
+                    null,
+                    gameContext.gameStateEntity.beaconCost.Value
+                );
+        }
+    }
+
+    private void CreateBeacon(InputEntity inputEntity){
+        GameEntity beaconEntity = gameContext.CreateEntity();
+            beaconEntity.AddPosition(inputEntity.position);
             beaconEntity.AddBeacon(
                 gameContext.gameStateEntity.beaconAction.Value,
                 gameContext.gameStateEntity.beaconRange.Value);
             beaconEntity.AddFaction(Faction.Player);
-        }
     }
 }

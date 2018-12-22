@@ -12,44 +12,47 @@ public static class GameComponentsLookup {
     public const int Attack = 1;
     public const int BeaconAction = 2;
     public const int Beacon = 3;
-    public const int BeaconRange = 4;
-    public const int CharacterController = 5;
-    public const int CharacterType = 6;
-    public const int Cooldown = 7;
-    public const int CurrentEnemy = 8;
-    public const int CurrentEnergy = 9;
-    public const int CurrentEnergyListener = 10;
-    public const int CurrentHealth = 11;
-    public const int CurrentHealthListener = 12;
-    public const int Damage = 13;
-    public const int DamageListener = 14;
-    public const int DistanceMoved = 15;
-    public const int Faction = 16;
-    public const int GameObject = 17;
-    public const int GameState = 18;
-    public const int MaxEnergy = 19;
-    public const int MaxHealth = 20;
-    public const int Mobility = 21;
-    public const int MoveTarget = 22;
-    public const int Moving = 23;
-    public const int ObstacleType = 24;
-    public const int Orientation = 25;
-    public const int OrientationSettings = 26;
-    public const int Position = 27;
-    public const int Request = 28;
-    public const int Scared = 29;
-    public const int SightRange = 30;
-    public const int SpriteRenderer = 31;
-    public const int SwitchBeaconActionRequest = 32;
-    public const int ToDestroy = 33;
+    public const int BeaconCost = 4;
+    public const int BeaconRange = 5;
+    public const int CharacterController = 6;
+    public const int CharacterType = 7;
+    public const int Cooldown = 8;
+    public const int CurrentEnemy = 9;
+    public const int CurrentEnergy = 10;
+    public const int CurrentEnergyListener = 11;
+    public const int CurrentHealth = 12;
+    public const int CurrentHealthListener = 13;
+    public const int Damage = 14;
+    public const int DamageListener = 15;
+    public const int DistanceMoved = 16;
+    public const int EnergyRequireingRequest = 17;
+    public const int Faction = 18;
+    public const int GameObject = 19;
+    public const int GameState = 20;
+    public const int MaxEnergy = 21;
+    public const int MaxHealth = 22;
+    public const int Mobility = 23;
+    public const int MoveTarget = 24;
+    public const int Moving = 25;
+    public const int ObstacleType = 26;
+    public const int Orientation = 27;
+    public const int OrientationSettings = 28;
+    public const int Position = 29;
+    public const int Request = 30;
+    public const int Scared = 31;
+    public const int SightRange = 32;
+    public const int SpriteRenderer = 33;
+    public const int SwitchBeaconActionRequest = 34;
+    public const int ToDestroy = 35;
 
-    public const int TotalComponents = 34;
+    public const int TotalComponents = 36;
 
     public static readonly string[] componentNames = {
         "Animator",
         "Attack",
         "BeaconAction",
         "Beacon",
+        "BeaconCost",
         "BeaconRange",
         "CharacterController",
         "CharacterType",
@@ -62,6 +65,7 @@ public static class GameComponentsLookup {
         "Damage",
         "DamageListener",
         "DistanceMoved",
+        "EnergyRequireingRequest",
         "Faction",
         "GameObject",
         "GameState",
@@ -87,6 +91,7 @@ public static class GameComponentsLookup {
         typeof(AttackComponent),
         typeof(BeaconActionComponent),
         typeof(BeaconComponent),
+        typeof(BeaconCostComponent),
         typeof(BeaconRangeComponent),
         typeof(CharacterControllerComponent),
         typeof(CharacterTypeComponent),
@@ -99,6 +104,7 @@ public static class GameComponentsLookup {
         typeof(DamageComponent),
         typeof(DamageListenerComponent),
         typeof(DistanceMovedComponent),
+        typeof(EnergyRequireingRequestComponent),
         typeof(FactionComponent),
         typeof(GameObjectComponent),
         typeof(GameStateComponent),

@@ -29,6 +29,9 @@ public class SwitchBeaconActionSystem : ReactiveSystem<GameEntity>
             gameContext.gameStateEntity.ReplaceBeaconRange(
                 BeaconService.GetDefaultRangeForAction(newAction)
             );
+            gameContext.gameStateEntity.ReplaceBeaconCost(
+                BeaconService.GetDefaultCostForAction(newAction)
+            );
         }
     }
 }

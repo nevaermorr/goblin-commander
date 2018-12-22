@@ -6,7 +6,6 @@ public class ControlFeature : Feature
     {
         Add(new InitializeBeaconSettingsSystem(contexts));
         Add(new SwitchBeaconActionSystem(contexts));
-        Add(new PlaceBeaconSystem(contexts));
         Add(new BeaconSummonSystem(contexts));
         Add(new BeaconScareSystem(contexts));
     }
