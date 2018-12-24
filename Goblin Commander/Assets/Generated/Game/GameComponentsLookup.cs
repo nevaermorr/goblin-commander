@@ -14,38 +14,41 @@ public static class GameComponentsLookup {
     public const int Beacon = 3;
     public const int BeaconCost = 4;
     public const int BeaconRange = 5;
-    public const int CharacterController = 6;
-    public const int CharacterType = 7;
-    public const int Cooldown = 8;
-    public const int CurrentEnemy = 9;
-    public const int CurrentEnergy = 10;
-    public const int CurrentEnergyListener = 11;
-    public const int CurrentHealth = 12;
-    public const int CurrentHealthListener = 13;
-    public const int Damage = 14;
-    public const int DamageListener = 15;
-    public const int DistanceMoved = 16;
-    public const int EnergyRequireingRequest = 17;
-    public const int Faction = 18;
-    public const int GameObject = 19;
-    public const int GameState = 20;
-    public const int MaxEnergy = 21;
-    public const int MaxHealth = 22;
-    public const int Mobility = 23;
-    public const int MoveTarget = 24;
-    public const int Moving = 25;
-    public const int ObstacleType = 26;
-    public const int Orientation = 27;
-    public const int OrientationSettings = 28;
-    public const int Position = 29;
-    public const int Request = 30;
-    public const int Scared = 31;
-    public const int SightRange = 32;
-    public const int SpriteRenderer = 33;
-    public const int SwitchBeaconActionRequest = 34;
-    public const int ToDestroy = 35;
+    public const int BeaconsSettings = 6;
+    public const int CharacterController = 7;
+    public const int CharacterType = 8;
+    public const int Cooldown = 9;
+    public const int CurrentEnemy = 10;
+    public const int CurrentEnergy = 11;
+    public const int CurrentEnergyListener = 12;
+    public const int CurrentHealth = 13;
+    public const int CurrentHealthListener = 14;
+    public const int Damage = 15;
+    public const int DamageListener = 16;
+    public const int DistanceMoved = 17;
+    public const int EnergyRequireingRequest = 18;
+    public const int Faction = 19;
+    public const int GameObject = 20;
+    public const int GameState = 21;
+    public const int GlobalSettings = 22;
+    public const int MaxEnergy = 23;
+    public const int MaxHealth = 24;
+    public const int Mobility = 25;
+    public const int MoveTarget = 26;
+    public const int Moving = 27;
+    public const int ObstacleType = 28;
+    public const int Orientation = 29;
+    public const int OrientationSettings = 30;
+    public const int Position = 31;
+    public const int Request = 32;
+    public const int Scared = 33;
+    public const int Settings = 34;
+    public const int SightRange = 35;
+    public const int SpriteRenderer = 36;
+    public const int SwitchBeaconActionRequest = 37;
+    public const int ToDestroy = 38;
 
-    public const int TotalComponents = 36;
+    public const int TotalComponents = 39;
 
     public static readonly string[] componentNames = {
         "Animator",
@@ -54,6 +57,7 @@ public static class GameComponentsLookup {
         "Beacon",
         "BeaconCost",
         "BeaconRange",
+        "BeaconsSettings",
         "CharacterController",
         "CharacterType",
         "Cooldown",
@@ -69,6 +73,7 @@ public static class GameComponentsLookup {
         "Faction",
         "GameObject",
         "GameState",
+        "GlobalSettings",
         "MaxEnergy",
         "MaxHealth",
         "Mobility",
@@ -80,6 +85,7 @@ public static class GameComponentsLookup {
         "Position",
         "Request",
         "Scared",
+        "Settings",
         "SightRange",
         "SpriteRenderer",
         "SwitchBeaconActionRequest",
@@ -93,6 +99,7 @@ public static class GameComponentsLookup {
         typeof(BeaconComponent),
         typeof(BeaconCostComponent),
         typeof(BeaconRangeComponent),
+        typeof(BeaconsSettingsComponent),
         typeof(CharacterControllerComponent),
         typeof(CharacterTypeComponent),
         typeof(CooldownComponent),
@@ -108,6 +115,7 @@ public static class GameComponentsLookup {
         typeof(FactionComponent),
         typeof(GameObjectComponent),
         typeof(GameStateComponent),
+        typeof(GlobalSettingsComponent),
         typeof(MaxEnergyComponent),
         typeof(MaxHealthComponent),
         typeof(MobilityComponent),
@@ -119,6 +127,7 @@ public static class GameComponentsLookup {
         typeof(PositionComponent),
         typeof(RequestComponent),
         typeof(ScaredComponent),
+        typeof(SettingsComponent),
         typeof(SightRangeComponent),
         typeof(SpriteRendererComponent),
         typeof(SwitchBeaconActionRequest),

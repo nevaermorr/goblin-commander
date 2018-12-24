@@ -1,35 +1,29 @@
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 public static class BeaconService
 {
-    //TODO extract this to scriptable oject or something.
-    private static Dictionary<BeaconAction, float> DEFAULT_BEACON_RANGES = new Dictionary<BeaconAction, float>
+    private static BeaconSettings GetBeaconSettings(BeaconAction action)
     {
-        {BeaconAction.Summon, 5f},
-        {BeaconAction.Scare, 1f}
-    };
-
-    private static Dictionary<BeaconAction, float> DEFAULT_BEACON_COSTS = new Dictionary<BeaconAction, float>
-    {
-        {BeaconAction.Summon, 1f},
-        {BeaconAction.Scare, 3f}
-    };
+        try
+        {
+            return Contexts.sharedInstance.game.settingsEntity.beaconsSettings.Map[action];
+        }
+        catch {
+            Debug.LogError("[beacon service] Could not find proper settings for beacon action: " + action);
+        }
+        return null;
+    }
 
     public static float GetDefaultRangeForAction(BeaconAction action)
     {
-        if (!DEFAULT_BEACON_RANGES.ContainsKey(action)){
-            return 0f;
-        }
-        return DEFAULT_BEACON_RANGES[action];
+        return GetBeaconSettings(action).Range;
     }
 
     public static float GetDefaultCostForAction(BeaconAction action)
     {
-        if (!DEFAULT_BEACON_COSTS.ContainsKey(action)){
-            return 0f;
-        }
-        return DEFAULT_BEACON_COSTS[action];
+        return GetBeaconSettings(action).Cost;
     }
 
     public static GameEntity[] GetMobileCharacterEntitiesInRange(GameEntity beaconEntity)
