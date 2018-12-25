@@ -2,9 +2,9 @@ using System.Linq;
 using System.Collections.Generic;
 using Entitas;
 
-public class BeaconSummonSystem : ReactiveSystem<GameEntity>
+public class BeaconRallySystem : ReactiveSystem<GameEntity>
 {
-    public BeaconSummonSystem(Contexts contexts) : base(contexts.game) {}
+    public BeaconRallySystem(Contexts contexts) : base(contexts.game) {}
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
@@ -14,7 +14,7 @@ public class BeaconSummonSystem : ReactiveSystem<GameEntity>
     protected override bool Filter(GameEntity beaconEntity)
     {
         return beaconEntity.hasBeacon
-            && beaconEntity.beacon.Action == BeaconAction.Summon;
+            && beaconEntity.beacon.Action == BeaconAction.Rally;
     }
 
     protected override void Execute(List<GameEntity> beaconEntities)

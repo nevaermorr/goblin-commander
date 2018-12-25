@@ -14,4 +14,4 @@ MonoBehaviour:
   StartingEnergy: 10
   EnergyRecoveryInterval: 2
   EnergyRecoveryAmount: 0.5
-  DefaultBeaconAction: 0
+  DefaultBeaconAction: 2
