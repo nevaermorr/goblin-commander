@@ -6,6 +6,7 @@ using UnityEngine;
 public class GlobalSettings : ScriptableObject
 {
 	[Header("Energy")]
+	public float StartingEnergy;
 	public float EnergyRecoveryInterval;
 	public float EnergyRecoveryAmount;
 	[Header("Beacons")]

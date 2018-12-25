@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38ce2005228e474f95482ff8cce8a94, type: 3}
   m_Name: GlobalSettings
   m_EditorClassIdentifier: 
+  StartingEnergy: 10
   EnergyRecoveryInterval: 2
   EnergyRecoveryAmount: 0.5
   DefaultBeaconAction: 0

@@ -2,7 +2,6 @@ using Entitas;
 
 public class InitEnergySystem : IInitializeSystem
 {
-    private const float INITIAL_ENERGY = 10f;
     private readonly GameContext gameContext;
     public InitEnergySystem(Contexts contexts)
     {
@@ -11,6 +10,8 @@ public class InitEnergySystem : IInitializeSystem
 
     public void Initialize()
     {
-        gameContext.gameStateEntity.AddEnergy(INITIAL_ENERGY);
+        gameContext.gameStateEntity.AddEnergy(
+            gameContext.settingsEntity.globalSettings.Value.StartingEnergy
+        );
     }
 }
