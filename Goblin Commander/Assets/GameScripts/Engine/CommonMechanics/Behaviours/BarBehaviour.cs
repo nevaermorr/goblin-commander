@@ -88,8 +88,10 @@ public abstract class BarBehaviour : MonoBehaviour
 
     protected void OnParameterChanged(GameEntity entity, float currentParameterValue)
     {
+        EntityLink link;
         if (owner != null
-            && entity != owner.GetEntityLink().entity)
+            && (link = owner.GetEntityLink()) != null
+            && entity != link.entity)
         {
             return;
         }

@@ -5,12 +5,7 @@ using Entitas.Unity;
 
 public class InstantiateObstaclePrefabSystem : ReactiveSystem<GameEntity> {
 
-    private GameContext gameContext;
-
-    public InstantiateObstaclePrefabSystem(Contexts contexts) : base(contexts.game)
-    {
-        gameContext = contexts.game;
-    }
+    public InstantiateObstaclePrefabSystem(Contexts contexts) : base(contexts.game) {}
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
@@ -38,9 +33,6 @@ public class InstantiateObstaclePrefabSystem : ReactiveSystem<GameEntity> {
         GameObject obstacleObject = Object.Instantiate(
             obstacleSettings.Prefab
         ) as GameObject;
-
-        // TODO move linking to separate system.
-        obstacleObject.Link(obstacleEntity, gameContext);
 
         obstacleEntity.AddGameObject(obstacleObject);
         PutInPosition(obstacleObject, obstacleEntity);

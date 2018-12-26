@@ -5,12 +5,7 @@ using Entitas.Unity;
 
 public class InstantiateCharacterPrefabSystem : ReactiveSystem<GameEntity> {
 
-    private GameContext gameContext;
-
-    public InstantiateCharacterPrefabSystem(Contexts contexts) : base(contexts.game)
-    {
-        gameContext = contexts.game;
-    }
+    public InstantiateCharacterPrefabSystem(Contexts contexts) : base(contexts.game) {}
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
@@ -38,8 +33,6 @@ public class InstantiateCharacterPrefabSystem : ReactiveSystem<GameEntity> {
         GameObject characterObject = Object.Instantiate(
             characterSettings.Prefab
         ) as GameObject;
-        // TODO move linking to separate system.
-        characterObject.Link(characterEntity, gameContext);
 
         characterEntity.AddGameObject(characterObject);
         PutInPosition(characterObject, characterEntity);
