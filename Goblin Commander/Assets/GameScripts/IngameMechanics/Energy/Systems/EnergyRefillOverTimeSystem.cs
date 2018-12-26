@@ -2,19 +2,14 @@ using System.Collections.Generic;
 using Entitas;
 using UnityEngine;
 
-public class EnergyRefillSystem : IExecuteSystem, IInitializeSystem
+public class EnergyRefillOverTimeSystem : IExecuteSystem
 {
     GameContext gameContext;
     private float timeToRefill;
 
-    public EnergyRefillSystem(Contexts contexts)
+    public EnergyRefillOverTimeSystem(Contexts contexts)
     {
         gameContext = contexts.game;
-    }
-
-    public void Initialize()
-    {
-        
     }
 
     public void Execute()
@@ -36,7 +31,7 @@ public class EnergyRefillSystem : IExecuteSystem, IInitializeSystem
     {
         gameContext.gameStateEntity.ReplaceCurrentEnergy(
             gameContext.gameStateEntity.currentEnergy
-            + gameContext.settingsEntity.globalSettings.Value.EnergyRecoveryAmount
+            + gameContext.settingsEntity.globalSettings.Value.EnergyRecoveryAmountOverTime
         );
     }
 

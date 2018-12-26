@@ -8,7 +8,8 @@ public class GlobalSettings : ScriptableObject
 	[Header("Energy")]
 	public float StartingEnergy;
 	public float EnergyRecoveryInterval;
-	public float EnergyRecoveryAmount;
+	public float EnergyRecoveryAmountOverTime;
+	public float EnergyRecoveryAmountOnEnemyHit;
 	[Header("Beacons")]
 	public BeaconAction DefaultBeaconAction;
 }

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartingEnergy: 10
   EnergyRecoveryInterval: 2
-  EnergyRecoveryAmount: 0.5
+  EnergyRecoveryAmountOverTime: 0.5
+  EnergyRecoveryAmountOnEnemyHit: 1
   DefaultBeaconAction: 2

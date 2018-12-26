@@ -6,6 +6,6 @@ public class EnergyFeature : Feature
     {
         Add(new InitEnergySystem(contexts));
         Add(new EnergyRequestsSystem(contexts));
-        Add(new EnergyRefillSystem(contexts));
+        Add(new EnergyRefillOverTimeSystem(contexts));
     }
 }
