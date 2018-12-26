@@ -27,19 +27,14 @@ public class GenerateCharacterSystem : IInitializeSystem
     {
         GameEntity testCharacter = CreateTestCharacter(Faction.Enemy);
         testCharacter.ReplacePosition(position);
-        testCharacter.ReplaceAttack(0.1f, 0.5f, 1f);
     }
 
     private GameEntity CreateTestCharacter(Faction faction)
     {
         GameEntity testCharacter = gameContext.CreateEntity();
         testCharacter.AddCharacterType(CharacterType.goblin);
-        testCharacter.AddMobility(2f);
         testCharacter.AddPosition(Vector2.zero);
         testCharacter.AddFaction(faction);
-        testCharacter.AddSightRange(1f);
-        testCharacter.AddAttack(0.1f, 0.5f, 0.5f);
-        testCharacter.AddHealth(5f);
 
         return testCharacter;
     }

@@ -6,5 +6,6 @@ public class CharacterCreationFeature : Feature
     {
         Add(new GenerateCharacterSystem(contexts));
         Add(new InstantiateCharacterPrefabSystem(contexts));
+        Add(new ApplyCharacterSettingsSystem(contexts));
     }
 }

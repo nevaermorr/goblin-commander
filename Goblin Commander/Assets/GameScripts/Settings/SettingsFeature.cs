@@ -6,5 +6,6 @@ public class SettingsFeature : Feature
 	{
 		Add(new InitializeSettingsSystem(contexts));
 		Add(new InitializeBeaconsSettingsSystem(contexts));
+		Add(new InitializeCharactersSettingsSystem(contexts));
 	}
 }

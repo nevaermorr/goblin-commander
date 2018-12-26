@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Entitas;
 using UnityEngine;
 
@@ -30,7 +31,10 @@ public class InitializeBeaconsSettingsSystem : IInitializeSystem
 
             gameContext.settingsEntity.AddBeaconsSettings(beaconSettingsMap);
         }
-        catch {}
+        catch (Exception exception){
+            Debug.LogError(string.Format("Error while loading beacons settings: {0}",
+            exception.Message));
+        }
     }
 
     private void SetDefaultsToGameSettings()

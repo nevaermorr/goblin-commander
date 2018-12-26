@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -10,8 +11,10 @@ public static class BeaconService
         {
             return Contexts.sharedInstance.game.settingsEntity.beaconsSettings.Map[action];
         }
-        catch {
-            Debug.LogError("[beacon service] Could not find proper settings for beacon action: " + action);
+        catch (Exception exception){
+            Debug.LogError(string.Format("Could not find proper settings for beacon action {0}: {1}",
+            action,
+            exception.Message));
         }
         return null;
     }

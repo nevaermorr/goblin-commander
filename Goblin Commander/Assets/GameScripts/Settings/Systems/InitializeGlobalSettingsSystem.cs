@@ -1,4 +1,5 @@
-﻿using Entitas;
+﻿using System;
+using Entitas;
 using UnityEngine;
 
 public class InitializeSettingsSystem : IInitializeSystem
@@ -30,6 +31,9 @@ public class InitializeSettingsSystem : IInitializeSystem
             GlobalSettings globalSettings = SettingsService.GetSettings<GlobalSettings>(GLOBAL_SETTINGS_PATH);
             settingsEntity.AddGlobalSettings(globalSettings);
         }
-        catch {}
+        catch (Exception exception){
+            Debug.LogError(string.Format("Error while loading global settings: {0}",
+            exception.Message));
+        }
     }
 }
