@@ -24,17 +24,25 @@ public class InstantiateCharacterPrefabSystem : ReactiveSystem<GameEntity> {
 
     protected override void Execute(List<GameEntity> entities)
     {
-        foreach (GameEntity entity in entities)
+        foreach (GameEntity characterEntity in entities)
         {
-            GameObject characterObject = Object.Instantiate(
-                CharacterPrefabService.GetPrefabForType(entity.characterType)
-            ) as GameObject;
-            // TODO move linking to separate system.
-            characterObject.Link(entity, gameContext);
-
-            entity.AddGameObject(characterObject);
-            PutInPosition(characterObject, entity);
+            InstantiateCharacterGameObject(characterEntity);
         }
+    }
+
+    private void InstantiateCharacterGameObject(GameEntity characterEntity)
+    {
+        CharacterType characterType = characterEntity.characterType.Value;
+        CharacterSettings characterSettings = SettingsService.GetCharacterSettings(characterType);
+
+        GameObject characterObject = Object.Instantiate(
+            characterSettings.Prefab
+        ) as GameObject;
+        // TODO move linking to separate system.
+        characterObject.Link(characterEntity, gameContext);
+
+        characterEntity.AddGameObject(characterObject);
+        PutInPosition(characterObject, characterEntity);
     }
 
     // TODO use trackedPosition / forcedPosition (or initPosition?) to differentiate.

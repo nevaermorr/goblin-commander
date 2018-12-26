@@ -21,4 +21,20 @@ public static class SettingsService
         }
         return settings;
     }
+
+    public static CharacterSettings GetCharacterSettings(CharacterType characterType)
+    {
+        try
+        {
+            GameEntity settingsEntity = Contexts.sharedInstance.game.settingsEntity;
+            CharacterSettings settings = settingsEntity.charactersSettings.Map[characterType];
+            return settings;
+        }
+        catch (System.Exception exception){
+            Debug.LogError(string.Format("Could not find character settings for the type {0}: {1}",
+            characterType,
+            exception.Message));
+        }
+        return new CharacterSettings();
+    }
 }
