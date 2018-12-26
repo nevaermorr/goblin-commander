@@ -37,19 +37,20 @@ public static class GameComponentsLookup {
     public const int Mobility = 26;
     public const int MoveTarget = 27;
     public const int Moving = 28;
-    public const int ObstacleType = 29;
-    public const int Orientation = 30;
-    public const int OrientationSettings = 31;
-    public const int Position = 32;
-    public const int Request = 33;
-    public const int Scared = 34;
-    public const int Settings = 35;
-    public const int SightRange = 36;
-    public const int SpriteRenderer = 37;
-    public const int SwitchBeaconActionRequest = 38;
-    public const int ToDestroy = 39;
+    public const int ObstaclesSettings = 29;
+    public const int ObstacleType = 30;
+    public const int Orientation = 31;
+    public const int OrientationSettings = 32;
+    public const int Position = 33;
+    public const int Request = 34;
+    public const int Scared = 35;
+    public const int Settings = 36;
+    public const int SightRange = 37;
+    public const int SpriteRenderer = 38;
+    public const int SwitchBeaconActionRequest = 39;
+    public const int ToDestroy = 40;
 
-    public const int TotalComponents = 40;
+    public const int TotalComponents = 41;
 
     public static readonly string[] componentNames = {
         "Animator",
@@ -81,6 +82,7 @@ public static class GameComponentsLookup {
         "Mobility",
         "MoveTarget",
         "Moving",
+        "ObstaclesSettings",
         "ObstacleType",
         "Orientation",
         "OrientationSettings",
@@ -124,6 +126,7 @@ public static class GameComponentsLookup {
         typeof(MobilityComponent),
         typeof(MoveTargetComponent),
         typeof(MovingComponent),
+        typeof(ObstaclesSettingsComponent),
         typeof(ObstacleTypeComponent),
         typeof(OrientationComponent),
         typeof(OrientationSettingsComponent),

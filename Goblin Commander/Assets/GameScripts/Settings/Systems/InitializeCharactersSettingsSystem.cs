@@ -38,10 +38,4 @@ public class InitializeCharactersSettingsSystem : IInitializeSystem
             exception.Message));
         }
     }
-
-    private void SetDefaultsToGameSettings()
-    {
-        BeaconAction currentBeaconAction = gameContext.settingsEntity.globalSettings.Value.DefaultBeaconAction;
-        RequestsService.CreateRequestEntity().AddSwitchBeaconActionRequest(currentBeaconAction);
-    }
 }

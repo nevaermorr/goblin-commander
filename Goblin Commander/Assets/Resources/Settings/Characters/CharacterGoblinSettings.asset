@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: CharacterGoblinSettings
   m_EditorClassIdentifier: 
   Character: 0
+  Prefab: {fileID: 1518434822581678, guid: 90c5efd9c759e4b4ebf798b5e9020a3f, type: 2}
   MovementSpeed: 2
   SightRange: 1
   Health: 10

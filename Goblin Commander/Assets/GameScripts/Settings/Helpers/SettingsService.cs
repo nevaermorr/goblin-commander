@@ -37,4 +37,20 @@ public static class SettingsService
         }
         return new CharacterSettings();
     }
+
+    public static ObstacleSettings GetObstacleSettings(ObstacleType obstacleType)
+    {
+        try
+        {
+            GameEntity settingsEntity = Contexts.sharedInstance.game.settingsEntity;
+            ObstacleSettings settings = settingsEntity.obstaclesSettings.Map[obstacleType];
+            return settings;
+        }
+        catch (System.Exception exception){
+            Debug.LogError(string.Format("Could not find obstacle settings for the type {0}: {1}",
+            obstacleType,
+            exception.Message));
+        }
+        return new ObstacleSettings();
+    }
 }
