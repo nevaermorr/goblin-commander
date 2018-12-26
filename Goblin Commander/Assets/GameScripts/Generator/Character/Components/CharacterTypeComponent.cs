@@ -3,6 +3,7 @@
 public enum CharacterType
 {
     goblin,
+    knight,
 }
 
 [Game]

@@ -40,7 +40,11 @@ public class DamageEffectBehaviour : MonoBehaviour, IDamageListener
 
     public void OnDamage(GameEntity entity, float damage, GameEntity origin, GameEntity target)
     {
-        if (target != owner.GetEntityLink().entity)
+        
+        EntityLink link;
+        if (owner != null
+            && (link = owner.GetEntityLink()) != null
+            && entity != link.entity)
         {
             return;
         }
