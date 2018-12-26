@@ -31,26 +31,27 @@ public static class GameComponentsLookup {
     public const int Faction = 20;
     public const int GameObject = 21;
     public const int GameState = 22;
-    public const int GlobalSettings = 23;
-    public const int MaxEnergy = 24;
-    public const int MaxHealth = 25;
-    public const int Mobility = 26;
-    public const int MoveTarget = 27;
-    public const int Moving = 28;
-    public const int ObstaclesSettings = 29;
-    public const int ObstacleType = 30;
-    public const int Orientation = 31;
-    public const int OrientationSettings = 32;
-    public const int Position = 33;
-    public const int Request = 34;
-    public const int Scared = 35;
-    public const int Settings = 36;
-    public const int SightRange = 37;
-    public const int SpriteRenderer = 38;
-    public const int SwitchBeaconActionRequest = 39;
-    public const int ToDestroy = 40;
+    public const int GenerateCharacterRequest = 23;
+    public const int GlobalSettings = 24;
+    public const int MaxEnergy = 25;
+    public const int MaxHealth = 26;
+    public const int Mobility = 27;
+    public const int MoveTarget = 28;
+    public const int Moving = 29;
+    public const int ObstaclesSettings = 30;
+    public const int ObstacleType = 31;
+    public const int Orientation = 32;
+    public const int OrientationSettings = 33;
+    public const int Position = 34;
+    public const int Request = 35;
+    public const int Scared = 36;
+    public const int Settings = 37;
+    public const int SightRange = 38;
+    public const int SpriteRenderer = 39;
+    public const int SwitchBeaconActionRequest = 40;
+    public const int ToDestroy = 41;
 
-    public const int TotalComponents = 41;
+    public const int TotalComponents = 42;
 
     public static readonly string[] componentNames = {
         "Animator",
@@ -76,6 +77,7 @@ public static class GameComponentsLookup {
         "Faction",
         "GameObject",
         "GameState",
+        "GenerateCharacterRequest",
         "GlobalSettings",
         "MaxEnergy",
         "MaxHealth",
@@ -120,6 +122,7 @@ public static class GameComponentsLookup {
         typeof(FactionComponent),
         typeof(GameObjectComponent),
         typeof(GameStateComponent),
+        typeof(GenerateCharacterRequestComponent),
         typeof(GlobalSettingsComponent),
         typeof(MaxEnergyComponent),
         typeof(MaxHealthComponent),

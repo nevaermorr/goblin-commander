@@ -1,41 +1,38 @@
 ﻿using UnityEngine;
 using Entitas;
 
-public class GenerateCharacterSystem : IInitializeSystem
+public class GenerateCharacterSystem : ReactiveSystem<GameEntity>
 {
     private readonly GameContext gameContext;
 
-    public GenerateCharacterSystem(Contexts contexts)
+    public GenerateCharacterSystem(Contexts contexts) : base(contexts.game)
     {
         gameContext = contexts.game;
     }
-
-    public void Initialize()
+    
+    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        CreateTestPlayerAt(new Vector2(1, 1)); 
-        CreateTestPlayerAt(new Vector2(1, 2)); 
-        CreateTestEnemyAt(new Vector2(5, 2));
+        return context.CreateCollector(GameMatcher.GenerateCharacterRequest.Added());
     }
 
-    private void CreateTestPlayerAt(Vector2 position)
+    protected override bool Filter(GameEntity entity)
     {
-        GameEntity testCharacter = CreateTestCharacter(Faction.Player);
-        testCharacter.ReplacePosition(position);
+        return entity.hasGenerateCharacterRequest;
     }
 
-    private void CreateTestEnemyAt(Vector2 position)
+    protected override void Execute(System.Collections.Generic.List<GameEntity> entities)
     {
-        GameEntity testCharacter = CreateTestCharacter(Faction.Enemy);
-        testCharacter.ReplacePosition(position);
+        foreach (GameEntity requestEntity in entities)
+        {
+            CreateTestCharacter(requestEntity.generateCharacterRequest);
+        }
     }
 
-    private GameEntity CreateTestCharacter(Faction faction)
+    private void CreateTestCharacter(GenerateCharacterRequestComponent request)
     {
         GameEntity testCharacter = gameContext.CreateEntity();
-        testCharacter.AddCharacterType(CharacterType.goblin);
-        testCharacter.AddPosition(Vector2.zero);
-        testCharacter.AddFaction(faction);
-
-        return testCharacter;
+        testCharacter.AddCharacterType(request.CharacterType);
+        testCharacter.AddPosition(request.Position);
+        testCharacter.AddFaction(request.Faction);
     }
 }

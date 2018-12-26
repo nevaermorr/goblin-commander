@@ -7,5 +7,6 @@ public class ControlFeature : Feature
         Add(new SwitchBeaconActionSystem(contexts));
         Add(new BeaconRallySystem(contexts));
         Add(new BeaconScareSystem(contexts));
+        Add(new BeaconSummonSystem(contexts));
     }
 }
