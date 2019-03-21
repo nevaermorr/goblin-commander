@@ -6,8 +6,5 @@ public class CommonMechanicsFeature : Feature
     {
         Add(new InitializeGameStateSystem(contexts));
         Add(new CooldownSystem(contexts));
-        Add(new LinkGameObjectSystem(contexts));
-        Add(new DestroyEntitySystem(contexts));
-        Add(new DestroyRequestSystem(contexts));
     }
 }

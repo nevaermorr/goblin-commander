@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour
             .Add(new IngameMechacnicsFeature(contexts))
             .Add(new AnimationsFeature(contexts))
             .Add(new GameEventSystems(contexts))
+            .Add(new LateEngineFeature(contexts))
         ;
     }
 }
