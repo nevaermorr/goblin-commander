@@ -7,5 +7,6 @@ public class AnimationsFeature : Feature
         Add(new SetUpAnimatorSystem(contexts));
         Add(new AnimateMovementSystem(contexts));
         Add(new AnimateAttackSystem(contexts));
+        Add(new AnimateSummonSystem(contexts));
     }
 }
